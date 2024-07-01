@@ -12,6 +12,8 @@ public class MapGenerator : MonoBehaviour
     public Node[] nodeObjects;
     public Node[] grassNode;
     public Node[] pathNode;
+    public Node[] startNode;
+    public Node[] endNode;
 
     [Header("Cells")]
     public Cell cellPrefab;
@@ -44,25 +46,33 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        StartCoroutine(GeneratePath());
+        StartCoroutine(GenerateNodes());
     }
 
-    IEnumerator GeneratePath()
+    IEnumerator GenerateNodes()
     {
         // For each cell
-        for (int c = 0; c < cells.Count; c++)
+        for (int i = 0; i < cells.Count; i++)
         {
-            if (cells[c].transform.position.x == mapSizeX / 2)
+            if (cells[i].transform.position.z == 0 && cells[i].transform.position.x == mapSizeX / 2)
             {
-                cells[c].nodeOptions = pathNode;
+                cells[i].nodeOptions = startNode;
+            }
+            else if (cells[i].transform.position.z == mapSizeZ - 1 && cells[i].transform.position.x == mapSizeX / 2)
+            {
+                cells[i].nodeOptions = endNode;
+            }
+            else if (cells[i].transform.position.x == mapSizeX / 2)
+            {
+                cells[i].nodeOptions = pathNode;
             }
             else
             {
-                cells[c].nodeOptions = grassNode;
+                cells[i].nodeOptions = grassNode;
             }
             
             // Collapse the cell
-            CollapseCell(cells[c]);
+            CollapseCell(cells[i]);
 
             yield return new WaitForSeconds(0.05f);
         }

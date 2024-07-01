@@ -254,6 +254,10 @@ MonoBehaviour:
   - {fileID: 7867963798094480575, guid: 5654e86bd643e0745a6670ee7fad334a, type: 3}
   pathNode:
   - {fileID: -6457292118177161882, guid: 2cc0485721e7c334f80229c65ad96fab, type: 3}
+  startNode:
+  - {fileID: 3579899447403173952, guid: e7af17a61142680468e8651bf70ec05b, type: 3}
+  endNode:
+  - {fileID: -3518276493909589497, guid: f4ad068349b2e654ea0a21da4873228a, type: 3}
   cellPrefab: {fileID: 8732421339154275789, guid: 337aad37c9e599c48b17397b3ad3644c, type: 3}
   cells: []
   environmentHolder: {fileID: 1741566434}
