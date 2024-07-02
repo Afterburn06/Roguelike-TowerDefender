@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab5201f6f44683488f5a8ce1204a7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSizeX: 7
-  mapSizeZ: 7
+  mapSizeX: 51
+  mapSizeZ: 51
   nodeObjects:
   - {fileID: 7867963798094480575, guid: 5654e86bd643e0745a6670ee7fad334a, type: 3}
   - {fileID: -6457292118177161882, guid: 2cc0485721e7c334f80229c65ad96fab, type: 3}
@@ -260,6 +260,7 @@ MonoBehaviour:
   - {fileID: -3518276493909589497, guid: f4ad068349b2e654ea0a21da4873228a, type: 3}
   cellPrefab: {fileID: 8732421339154275789, guid: 337aad37c9e599c48b17397b3ad3644c, type: 3}
   cells: []
+  surface: {fileID: 1741566436}
   environmentHolder: {fileID: 1741566434}
 --- !u!4 &912164291
 Transform:
@@ -377,6 +378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741566435}
+  - component: {fileID: 1741566436}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -399,6 +401,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741566436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741566434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.06666667
+  m_MinRegionArea: 0.01
+  m_NavMeshData: {fileID: 0}
+  m_BuildHeightMesh: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

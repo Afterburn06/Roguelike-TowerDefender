@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.AI.Navigation;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class MapGenerator : MonoBehaviour
     [HideInInspector]
     public List<Cell> cells;
 
+    [Header("NavMesh")]
+    public NavMeshSurface surface;
     public GameObject environmentHolder;
 
     void Start()
@@ -76,6 +79,8 @@ public class MapGenerator : MonoBehaviour
 
             yield return new WaitForSeconds(0.05f);
         }
+
+        surface.BuildNavMesh();
     }
 
     void CollapseCell(Cell cellToCollapse)
@@ -86,7 +91,7 @@ public class MapGenerator : MonoBehaviour
         // Create the node under the environment GameObject
         Node createdNode = Instantiate(selectedNode, cellToCollapse.transform.position, selectedNode.transform.rotation);
         createdNode.transform.parent = environmentHolder.transform;
-
+        
         // Destroy the cell
         Destroy(cellToCollapse.gameObject);
     }
