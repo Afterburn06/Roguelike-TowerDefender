@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab5201f6f44683488f5a8ce1204a7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSizeX: 51
-  mapSizeZ: 51
+  mapSizeX: 7
+  mapSizeZ: 7
   nodeObjects:
   - {fileID: 7867963798094480575, guid: 5654e86bd643e0745a6670ee7fad334a, type: 3}
   - {fileID: -6457292118177161882, guid: 2cc0485721e7c334f80229c65ad96fab, type: 3}
