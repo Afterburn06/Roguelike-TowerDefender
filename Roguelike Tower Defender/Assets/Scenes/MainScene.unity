@@ -262,6 +262,7 @@ MonoBehaviour:
   cells: []
   surface: {fileID: 1741566436}
   environmentHolder: {fileID: 1741566434}
+  enemyPrefab: {fileID: 3412171052453483706, guid: 899ef696c573b86448ea76010d958692, type: 3}
 --- !u!4 &912164291
 Transform:
   m_ObjectHideFlags: 0

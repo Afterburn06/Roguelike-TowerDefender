@@ -25,8 +25,14 @@ public class MapGenerator : MonoBehaviour
     public NavMeshSurface surface;
     public GameObject environmentHolder;
 
+    [Header("Enemies")]
+    public GameObject enemyPrefab;
+    private Vector3 spawnPoint;
+
     void Start()
     {
+        spawnPoint = new Vector3(mapSizeX / 2, 0, 0);
+
         GenerateCells();
     }
 
@@ -81,6 +87,8 @@ public class MapGenerator : MonoBehaviour
         }
 
         surface.BuildNavMesh();
+        
+        Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
     }
 
     void CollapseCell(Cell cellToCollapse)
