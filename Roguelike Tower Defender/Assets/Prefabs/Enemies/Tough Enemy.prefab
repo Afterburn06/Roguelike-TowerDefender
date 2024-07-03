@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4070027784535410399}
   - component: {fileID: 3449868544220930897}
   - component: {fileID: 5273271389012330855}
+  - component: {fileID: -5982269763241057016}
   - component: {fileID: 480328434260691973}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Tough Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.55, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,7 +120,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.75
+  m_Speed: 0.5
   m_Acceleration: 1.5
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -131,6 +132,21 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-5982269763241057016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412171052453483706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d657c6022ad3e104f8d0698499b0ee44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 15
+  currentSpeed: 0
+  worth: 5
 --- !u!114 &480328434260691973
 MonoBehaviour:
   m_ObjectHideFlags: 0
