@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4070027784535410399}
   - component: {fileID: 3449868544220930897}
   - component: {fileID: 5273271389012330855}
-  - component: {fileID: -3146959132204411475}
+  - component: {fileID: -5982269763241057016}
   - component: {fileID: 480328434260691973}
   m_Layer: 0
-  m_Name: Basic Enemy
+  m_Name: Tough
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f6fa623ec30a4234eba90390ae615d9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,7 +121,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 0.75
-  m_Acceleration: 1.5
+  m_Acceleration: 0.75
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -132,7 +132,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-3146959132204411475
+--- !u!114 &-5982269763241057016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d657c6022ad3e104f8d0698499b0ee44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 5
+  startHealth: 15
   currentSpeed: 0
-  worth: 2
+  worth: 5
 --- !u!114 &480328434260691973
 MonoBehaviour:
   m_ObjectHideFlags: 0
