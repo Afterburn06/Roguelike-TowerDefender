@@ -18,12 +18,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if(agent.transform.position.z == endPoint.position.z)
         {
-            Die();
+            DamagePlayer();
         }
     }
 
-    void Die()
+    void DamagePlayer()
     {
-        Destroy(gameObject);
+        EnemySpawner.enemiesAlive--;
+        Destroy(gameObject);  
     }
 }

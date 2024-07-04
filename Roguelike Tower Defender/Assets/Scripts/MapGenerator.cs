@@ -5,6 +5,7 @@ using Unity.AI.Navigation;
 
 public class MapGenerator : MonoBehaviour
 {
+    [HideInInspector]
     public static bool loaded;
 
     [Header("Map Size")]
@@ -27,8 +28,7 @@ public class MapGenerator : MonoBehaviour
     public NavMeshSurface surface;
     public GameObject environmentHolder;
 
-    [Header("Enemies")]
-    public GameObject enemyPrefab;
+    [HideInInspector]
     public static Vector3 spawnPoint;
 
     void Start()
@@ -93,8 +93,6 @@ public class MapGenerator : MonoBehaviour
         surface.BuildNavMesh();
 
         loaded = true;
-
-        Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
     }
 
     void CollapseCell(Cell cellToCollapse)
