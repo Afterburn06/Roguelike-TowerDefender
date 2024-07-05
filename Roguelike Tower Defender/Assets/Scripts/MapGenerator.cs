@@ -5,8 +5,8 @@ using Unity.AI.Navigation;
 
 public class MapGenerator : MonoBehaviour
 {
-    [HideInInspector]
     public static bool loaded;
+    public static Vector3 spawnPoint;
 
     [Header("Map Size")]
     public int mapSizeX;
@@ -27,9 +27,6 @@ public class MapGenerator : MonoBehaviour
     [Header("NavMesh")]
     public NavMeshSurface surface;
     public GameObject environmentHolder;
-
-    [HideInInspector]
-    public static Vector3 spawnPoint;
 
     void Start()
     {

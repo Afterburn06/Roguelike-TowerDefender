@@ -5,12 +5,11 @@ public class Enemy : MonoBehaviour
 {
     private NavMeshAgent agent;
 
+    [Header("Stats")]
     public float startHealth;
     private float currentHealth;
-
-    //[HideInInspector]
+    [HideInInspector]
     public float currentSpeed;
-
     public int worth;
 
     void Start()
