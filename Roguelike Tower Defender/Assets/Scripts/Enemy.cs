@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        EnemySpawner.enemiesAlive--;
         Destroy(gameObject);
     }
 }

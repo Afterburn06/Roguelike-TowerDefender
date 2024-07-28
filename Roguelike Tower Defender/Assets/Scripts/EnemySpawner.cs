@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     private int waveIndex = 0;
 
     private float waveCountdown;
+    private float totalCountdown;
     public float timeBetweenWaves;
 
     public TextMeshProUGUI countdownText;
@@ -22,6 +23,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(enemiesAlive);
+
         if (!MapGenerator.loaded)
         {
             return;
