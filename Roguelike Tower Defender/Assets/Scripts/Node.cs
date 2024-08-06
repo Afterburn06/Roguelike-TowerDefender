@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (gameObject.layer != 6 && MapGenerator.loaded)
         {
             rend.material.color = hoverColor;
