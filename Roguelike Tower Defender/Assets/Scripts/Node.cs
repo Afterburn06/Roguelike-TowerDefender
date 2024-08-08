@@ -17,7 +17,7 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject() || GameManager.gameOver)
         {
             return;
         }

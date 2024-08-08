@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NextWaveButton : MonoBehaviour
+public class NextWaveButtonUI : MonoBehaviour
 {
     private EnemySpawner enemySpawner;
     public static bool canSkip;

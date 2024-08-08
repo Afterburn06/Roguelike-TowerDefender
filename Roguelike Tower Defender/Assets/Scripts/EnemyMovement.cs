@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
     void DamagePlayer()
     {
         EnemySpawner.enemiesAlive--;
+        PlayerStats.playerHealth--;
         Destroy(gameObject);  
     }
 }

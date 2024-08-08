@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (!MapGenerator.loaded || !countdown.setupComplete)
+        if (!MapGenerator.loaded || !countdown.setupComplete || GameManager.gameOver)
         {
             return;
         }
@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
     {
         Wave waveToSpawn = waves[waveIndex];
         countdown.currentCountdown = waveCountdown;
-        NextWaveButton.canSkip = true;
+        NextWaveButtonUI.canSkip = true;
 
         // For each enemy type
         for (int x = 0; x < waveToSpawn.enemies.Count(); x++)

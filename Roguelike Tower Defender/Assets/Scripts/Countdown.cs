@@ -22,7 +22,7 @@ public class Countdown : MonoBehaviour
 
     void Update()
     {
-        if (!MapGenerator.loaded)
+        if (!MapGenerator.loaded || GameManager.gameOver)
         {
             return;
         }
@@ -37,7 +37,7 @@ public class Countdown : MonoBehaviour
             setupComplete = true;
         }
 
-        if (setupComplete && currentCountdown < spawner.waveCountdown / 2 && spawner.waveIndex != spawner.waves.Length && NextWaveButton.canSkip)
+        if (setupComplete && currentCountdown < spawner.waveCountdown / 2 && spawner.waveIndex != spawner.waves.Length && NextWaveButtonUI.canSkip)
         {
             nextWaveButton.SetActive(true);
         }
