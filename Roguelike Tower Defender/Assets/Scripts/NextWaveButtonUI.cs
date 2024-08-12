@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class NextWaveButtonUI : MonoBehaviour
 {
-    private EnemySpawner enemySpawner;
+    public EnemySpawner enemySpawner;
     public static bool canSkip;
 
     void Start()
     {
         canSkip = true;
         this.gameObject.SetActive(false);
-
-        enemySpawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
     }
 
     public void Yes()

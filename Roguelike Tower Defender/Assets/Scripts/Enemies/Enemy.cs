@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (currentHealth <= 0f)
+        if (currentHealth <= 0f || GameManager.gameOver)
         {
             Die();
         }

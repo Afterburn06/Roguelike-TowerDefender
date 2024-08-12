@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf6d3ce6a2a9f14e93f8f94d7d429fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 806285814}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +656,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 3412171052453483706, guid: 44ede36eab4d98f478c7e0b09508296c, type: 3}
+    - {fileID: 3412171052453483706, guid: 899ef696c573b86448ea76010d958692, type: 3}
+    amounts: 05000000
+  - enemies:
+    - {fileID: 3412171052453483706, guid: 899ef696c573b86448ea76010d958692, type: 3}
     amounts: 05000000
   waveIndex: 0
   spawnRate: 0.75
