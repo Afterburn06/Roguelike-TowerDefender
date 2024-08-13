@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (!MapGenerator.loaded || !countdown.setupComplete || GameManager.gameOver)
+        if (!MapGenerator.loaded || !Countdown.setupComplete || GameManager.gameOver)
         {
             return;
         }

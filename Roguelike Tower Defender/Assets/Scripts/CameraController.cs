@@ -23,6 +23,11 @@ public class CameraController : MonoBehaviour
             this.enabled = false;
             return;
         }
+        
+        if (!MapGenerator.loaded)
+        {
+            return;
+        }
 
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {

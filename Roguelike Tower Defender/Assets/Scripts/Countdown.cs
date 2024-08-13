@@ -5,7 +5,7 @@ public class Countdown : MonoBehaviour
 {
     public float currentCountdown;
     
-    public bool setupComplete;
+    public static bool setupComplete;
     public int setupTime;
 
     public TextMeshProUGUI countdownText;

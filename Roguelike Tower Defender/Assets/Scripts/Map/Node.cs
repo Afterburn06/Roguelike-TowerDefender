@@ -17,7 +17,7 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (EventSystem.current.IsPointerOverGameObject() || GameManager.gameOver)
+        if (EventSystem.current.IsPointerOverGameObject() || GameManager.gameOver || !MapGenerator.loaded)
         {
             return;
         }
