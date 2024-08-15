@@ -657,7 +657,9 @@ MonoBehaviour:
   waves:
   - enemies:
     - {fileID: 3412171052453483706, guid: 899ef696c573b86448ea76010d958692, type: 3}
-    amounts: 05000000
+    - {fileID: 3412171052453483706, guid: 44ede36eab4d98f478c7e0b09508296c, type: 3}
+    - {fileID: 3412171052453483706, guid: aa3115099514cb745b84bebc8aba908c, type: 3}
+    amounts: 010000000100000001000000
   - enemies:
     - {fileID: 3412171052453483706, guid: 899ef696c573b86448ea76010d958692, type: 3}
     amounts: 05000000
@@ -895,13 +897,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4, y: 10, z: 4.5}
+  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
+  m_LocalPosition: {x: 4, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,12 +919,15 @@ MonoBehaviour:
   panBorderThickness: 10
   panSpeed: 5
   scrollSpeed: 0.2
-  minY: 6.5
+  rotateSpeed: 50
+  minY: 5
   maxY: 25
-  minX: -6
-  maxX: 14
-  minZ: -1.5
-  maxZ: 10.5
+  minX: -1
+  maxX: 9
+  minZ: -5
+  maxZ: 5
+  startPos: {x: 0, y: 0, z: 0}
+  startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1145140826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1483,7 @@ GameObject:
   - component: {fileID: 1612068881}
   - component: {fileID: 1612068882}
   m_Layer: 0
-  m_Name: PlayerHealthUI
+  m_Name: Player Health UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
