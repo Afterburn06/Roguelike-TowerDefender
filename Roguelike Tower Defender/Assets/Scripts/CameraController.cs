@@ -17,8 +17,8 @@ public class CameraController : MonoBehaviour
     public float minZ;
     public float maxZ;
 
-    public Vector3 startPos;
-    public Quaternion startRot;
+    private Vector3 startPos;
+    private Quaternion startRot;
 
     void Start()
     {
@@ -39,30 +39,32 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey("w") && transform.position.z != maxZ)
         {
-            transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.forward * panSpeed * Time.deltaTime);
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey("s") && transform.position.z != minZ)
         {
-            transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.back * panSpeed * Time.deltaTime);
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && transform.position.x != maxX)
         {
-            transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.right * panSpeed * Time.deltaTime);
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a") && transform.position.x != minX)
         {
-            transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.left * panSpeed * Time.deltaTime);
         }
+        
         if (Input.GetKey("q"))
         {
-            transform.Rotate(new Vector3(0 , 1, 0) * rotateSpeed * Time.deltaTime, Space.World);
+            transform.Rotate(new Vector3(0 , 1, 0) * rotateSpeed * Time.deltaTime);
         }
         if (Input.GetKey("e"))
         {
-            transform.Rotate(new Vector3(0, -1, 0) * rotateSpeed * Time.deltaTime, Space.World);
+            transform.Rotate(new Vector3(0, -1, 0) * rotateSpeed * Time.deltaTime);
         }
+        
         if (Input.GetKey("r"))
         {
             transform.position = startPos;
