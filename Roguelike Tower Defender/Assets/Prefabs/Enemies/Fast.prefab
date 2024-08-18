@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5252071156957446328}
+  - {fileID: 136042396748412351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6550164408928812465
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 3
+  currentHealth: 0
   currentSpeed: 0
   worth: 3
 --- !u!114 &480328434260691973
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9529a7725985d488787631e2804e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2432938165425890754
+--- !u!1001 &7549092261370368197
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -171,6 +172,10 @@ PrefabInstance:
     - target: {fileID: 1550345284324195173, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_Name
       value: Enemy Health UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252293940726681109, guid: a3e5288719b738343bd3760910404f29, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_Pivot.x
@@ -214,15 +219,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.408
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 0.9063079
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38268343
+      value: 0.42261827
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_LocalRotation.y
@@ -238,11 +243,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.37
+      value: 1.3499756
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -257,8 +262,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3e5288719b738343bd3760910404f29, type: 3}
---- !u!224 &5252071156957446328 stripped
+--- !u!224 &136042396748412351 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7575215913603261818, guid: a3e5288719b738343bd3760910404f29, type: 3}
-  m_PrefabInstance: {fileID: 2432938165425890754}
+  m_PrefabInstance: {fileID: 7549092261370368197}
   m_PrefabAsset: {fileID: 0}

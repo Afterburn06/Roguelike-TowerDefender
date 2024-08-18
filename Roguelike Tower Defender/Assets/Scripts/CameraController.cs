@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float panBorderThickness;
-
-    [Header("Camera Speeds")]
+    [Header("Speeds")]
     public float panSpeed;
     public float scrollSpeed;
     public float rotateSpeed;
 
-    [Header("Min and Max Values")]
+    [Header("Min/Max Values")]
     public float minY;
     public float maxY;
     public float minX;

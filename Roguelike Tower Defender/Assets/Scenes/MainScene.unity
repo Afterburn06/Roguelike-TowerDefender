@@ -656,10 +656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 3412171052453483706, guid: 899ef696c573b86448ea76010d958692, type: 3}
-    - {fileID: 3412171052453483706, guid: 44ede36eab4d98f478c7e0b09508296c, type: 3}
     - {fileID: 3412171052453483706, guid: aa3115099514cb745b84bebc8aba908c, type: 3}
-    amounts: 010000000100000001000000
+    amounts: 05000000
   waveIndex: 0
   spawnRate: 0.75
   waveCountdown: 10
@@ -708,10 +706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b92c7d43e1ca5044a20bc33916bf23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panBorderThickness: 0
   panSpeed: 5
   scrollSpeed: 0.3
-  rotateSpeed: 25
+  rotateSpeed: 30
   minY: 5
   maxY: 20
   minX: -1

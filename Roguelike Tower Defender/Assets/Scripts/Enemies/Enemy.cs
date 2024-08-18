@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Stats")]
     public float startHealth;
-    private float currentHealth;
+    public float currentHealth;
     [HideInInspector]
     public float currentSpeed;
     public int worth;
