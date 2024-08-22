@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Bullet : Projectile
+public class TestBullet : Projectile
 {
-    public float speed = 70f;
+    public float speed;
 
     protected override void Update()
     {

@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 7819875023257609779}
   firePoint: {fileID: 824487103262264459}
-  range: 3
+  shootRange: 2
   turnSpeed: 10
   shotsPerSecond: 1
   bulletPrefab: {fileID: 4516719892790427382, guid: e122e2ea6f2c2004b94ed6b97798b0ce, type: 3}

@@ -28,7 +28,7 @@ public class TestTurret : Turret
     void Shoot()
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        TestBullet bullet = bulletGO.GetComponent<TestBullet>();
 
         if (bullet != null)
         {
