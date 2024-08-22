@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    private Transform target;
+    protected private Transform target;
     private Enemy targetEnemy;
-    public string enemyTag = "Enemy";
+    private string enemyTag = "Enemy";
     
     public Transform partToRotate;
     public Transform firePoint;
@@ -12,10 +12,19 @@ public class Turret : MonoBehaviour
     public float range;
     public float turnSpeed;
     
-
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
+
+    protected virtual void Update()
+    {
+        if (target == null)
+        {
+            return;
+        }
+
+        LockOnTarget();
     }
 
     void UpdateTarget()
@@ -43,16 +52,6 @@ public class Turret : MonoBehaviour
         {
             target = null;
         }
-    }
-
-    void Update()
-    {
-        if (target == null)
-        {
-            return;
-        }
-
-        LockOnTarget();
     }
 
     void LockOnTarget()

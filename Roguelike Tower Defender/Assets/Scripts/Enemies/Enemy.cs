@@ -28,6 +28,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+    }
+
     void Die()
     {
         EnemySpawner.enemiesAlive--;
