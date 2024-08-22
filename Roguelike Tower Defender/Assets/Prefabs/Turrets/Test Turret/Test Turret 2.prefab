@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 8075387938196053200}
   - component: {fileID: 1689348204722170252}
   m_Layer: 0
-  m_Name: Test Turret
+  m_Name: Test Turret 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 0.17, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7819875023257609779}
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 7819875023257609779}
   firePoint: {fileID: 824487103262264459}
-  shootRange: 2
+  attackRange: 2
   turnSpeed: 10
   shotsPerSecond: 1
   bulletPrefab: {fileID: 4516719892790427382, guid: e122e2ea6f2c2004b94ed6b97798b0ce, type: 3}

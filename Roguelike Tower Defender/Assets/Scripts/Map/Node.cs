@@ -22,7 +22,8 @@ public class Node : MonoBehaviour
             return;
         }
 
-        if (gameObject.layer != 6 && MapGenerator.loaded)
+        // If not a path tile
+        if (gameObject.layer != 6)
         {
             rend.material.color = hoverColor;
         } 

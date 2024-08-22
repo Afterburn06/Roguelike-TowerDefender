@@ -10,7 +10,7 @@ public class Turret : MonoBehaviour
     public Transform firePoint;
 
     private float lockRange;
-    public float shootRange;
+    public float attackRange;
     public float turnSpeed;
 
     private bool lockedOn;
@@ -18,7 +18,7 @@ public class Turret : MonoBehaviour
     void Start()
     {
         lockedOn = false;
-        lockRange = shootRange + shootRange / 3;
+        lockRange = attackRange + attackRange / 3;
 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
@@ -79,7 +79,7 @@ public class Turret : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, shootRange);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, lockRange);

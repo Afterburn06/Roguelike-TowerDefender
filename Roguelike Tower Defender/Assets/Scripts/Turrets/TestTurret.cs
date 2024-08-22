@@ -15,7 +15,7 @@ public class TestTurret : Turret
         {
             float distanceToEnemy = Vector3.Distance(transform.position, target.transform.position);
 
-            if (shotCountdown <= 0f && distanceToEnemy <= shootRange)
+            if (shotCountdown <= 0f && distanceToEnemy <= attackRange)
             {
                 Shoot();
                 shotCountdown = 1f / shotsPerSecond;
