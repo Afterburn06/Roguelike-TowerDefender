@@ -11,10 +11,15 @@ public class TestTurret : Turret
     {
         base.Update();
 
-        if (shotCountdown <= 0f && target != null)
+        if (target != null)
         {
-            Shoot();
-            shotCountdown = 1f / shotsPerSecond;
+            float distanceToEnemy = Vector3.Distance(transform.position, target.transform.position);
+
+            if (shotCountdown <= 0f && distanceToEnemy <= shootRange)
+            {
+                Shoot();
+                shotCountdown = 1f / shotsPerSecond;
+            }
         }
 
         shotCountdown -= Time.deltaTime;

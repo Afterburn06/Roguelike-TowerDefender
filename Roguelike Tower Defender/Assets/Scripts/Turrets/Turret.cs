@@ -9,12 +9,14 @@ public class Turret : MonoBehaviour
     public Transform partToRotate;
     public Transform firePoint;
 
-    public float range;
+    private float lockRange;
+    public float shootRange;
     public float turnSpeed;
     
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        lockRange = shootRange + shootRange / 3;
     }
 
     protected virtual void Update()
@@ -30,12 +32,13 @@ public class Turret : MonoBehaviour
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
+        float shortestDistance = Mathf.Infinity;
 
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
@@ -43,7 +46,7 @@ public class Turret : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= lockRange)
         {
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
@@ -65,6 +68,9 @@ public class Turret : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, shootRange);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, lockRange);
     }
 }

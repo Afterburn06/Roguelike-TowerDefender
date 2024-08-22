@@ -523,13 +523,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1689348204722170252, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
+      propertyPath: shootRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7454278356749628531, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
       propertyPath: m_Name
       value: Test Turret
       objectReference: {fileID: 0}
     - target: {fileID: 8075387938196053200, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8075387938196053200, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -537,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8075387938196053200, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8075387938196053200, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
       propertyPath: m_LocalRotation.w
