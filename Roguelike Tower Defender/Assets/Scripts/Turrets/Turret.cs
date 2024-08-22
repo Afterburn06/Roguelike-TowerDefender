@@ -12,17 +12,22 @@ public class Turret : MonoBehaviour
     private float lockRange;
     public float shootRange;
     public float turnSpeed;
+
+    private bool lockedOn;
     
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        lockedOn = false;
         lockRange = shootRange + shootRange / 3;
+
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     protected virtual void Update()
     {
         if (target == null)
         {
+            lockedOn = false;
             return;
         }
 
@@ -31,6 +36,11 @@ public class Turret : MonoBehaviour
 
     void UpdateTarget()
     {
+        if (lockedOn)
+        {
+            return;
+        }
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         GameObject nearestEnemy = null;
         float shortestDistance = Mathf.Infinity;
@@ -50,6 +60,7 @@ public class Turret : MonoBehaviour
         {
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
+            lockedOn = true;
         }
         else
         {
