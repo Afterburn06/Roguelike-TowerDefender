@@ -935,7 +935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Test Turret
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -962,8 +962,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2886,12 +2886,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testTurret:
-    cost: 100
-    basePrefab: {fileID: 7454278356749628531, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
+    levelOnePrefab: {fileID: 7454278356749628531, guid: 028a27ad8acf89b4281b3cf0ff8f3ba3, type: 3}
     levelTwoPrefab: {fileID: 7454278356749628531, guid: 73d5967d1f5de2144bfdce66f03d1aa1, type: 3}
     levelThreePrefab: {fileID: 7454278356749628531, guid: b3f8ad794d6d3974a841f579b16864e0, type: 3}
-    upgradeOneCost: 100
-    upgradeTwoCost: 100
+    baseCost: 100
+    upgradeOneCost: 150
+    upgradeTwoCost: 200
 --- !u!1 &1899600002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,7 +3242,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1925142415}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1884153242}
+        m_TargetAssemblyTypeName: GameShop, Assembly-CSharp
+        m_MethodName: SelectTestTurret
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1925142415
 MonoBehaviour:
   m_ObjectHideFlags: 0

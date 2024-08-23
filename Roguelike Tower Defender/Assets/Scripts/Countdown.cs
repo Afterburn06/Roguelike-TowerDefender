@@ -9,8 +9,8 @@ public class Countdown : MonoBehaviour
     public int setupTime;
 
     public TextMeshProUGUI countdownText;
-    private EnemySpawner spawner;
     public GameObject nextWaveButton;
+    private EnemySpawner spawner;
 
     void Start()
     {
