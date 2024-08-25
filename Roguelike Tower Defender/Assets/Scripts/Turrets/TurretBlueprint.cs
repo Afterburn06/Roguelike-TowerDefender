@@ -9,12 +9,15 @@ public class TurretBlueprint
     public GameObject levelThreePrefab;
 
     [Header("Costs")]
-    public int baseCost;
+    public int cost;
     public int upgradeOneCost;
     public int upgradeTwoCost;
 
+    [Header("Other")]
+    public Vector3 positionOffset;
+
     public int GetSellAmount()
     {
-        return baseCost / 2;
+        return cost / 2;
     }
 }
