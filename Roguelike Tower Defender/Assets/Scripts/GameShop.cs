@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameShop : MonoBehaviour
 {
     public TurretBlueprint testTurret;
+    public TurretBlueprint anotherTurret;
 
     BuildManager buildManager;
 
@@ -14,5 +15,10 @@ public class GameShop : MonoBehaviour
     public void SelectTestTurret()
     {
         buildManager.SelectTurretToBuild(testTurret);
+    }
+
+    public void SelectAnotherTurret()
+    {
+        buildManager.SelectTurretToBuild(anotherTurret);
     }
 }

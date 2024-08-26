@@ -26,12 +26,12 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!buildManager.CanBuild)
+        if (!buildManager.CanBuild || EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }    
 
-        if (turret != null)
+        if (turret != null || gameObject.layer == 6)
         {
             Debug.Log("Can't build there!");
             return;
@@ -58,10 +58,4 @@ public class Node : MonoBehaviour
     {
         rend.material.color = startColor;
     }
-
-    public Vector3 GetBuildPosition()
-    {
-        return transform.position + positionOffset;
-    }
-
 }
