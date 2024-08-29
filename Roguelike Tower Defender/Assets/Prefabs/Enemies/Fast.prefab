@@ -148,7 +148,7 @@ MonoBehaviour:
   startHealth: 3
   currentHealth: 0
   currentSpeed: 0
-  worth: 3
+  value: 50
 --- !u!114 &480328434260691973
 MonoBehaviour:
   m_ObjectHideFlags: 0

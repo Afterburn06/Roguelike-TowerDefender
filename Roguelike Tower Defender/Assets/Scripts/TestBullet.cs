@@ -8,17 +8,20 @@ public class TestBullet : Projectile
     {
         base.Update();
 
-        Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
-
-        if (dir.magnitude <= distanceThisFrame)
+        if (target != null)
         {
-            HitTarget();
-            return;
-        }
+            Vector3 dir = target.position - transform.position;
+            float distanceThisFrame = speed * Time.deltaTime;
 
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        transform.LookAt(target);
+            if (dir.magnitude <= distanceThisFrame)
+            {
+                HitTarget();
+                return;
+            }
+
+            transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+            transform.LookAt(target);
+        }
     }
 
     void HitTarget()

@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float currentHealth;
     [HideInInspector]
     public float currentSpeed;
-    public int worth;
+    public int value;
 
     void Start()
     {
@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        MoneyManager.currentMoney += value;
         EnemySpawner.enemiesAlive--;
         Destroy(gameObject);
     }
