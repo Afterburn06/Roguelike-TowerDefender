@@ -33,7 +33,14 @@ public class BuildManager : MonoBehaviour
             return;
         }
 
+        if (UnitManager.currentUnits == UnitManager.maxUnits)
+        {
+            Debug.Log("Unit allowance reached.");
+            return;
+        }
+
         MoneyManager.currentMoney -= turretToBuild.cost;
+        UnitManager.currentUnits++;
 
         GameObject turret = (GameObject)Instantiate(turretToBuild.levelOnePrefab, node.transform.position + turretToBuild.positionOffset, Quaternion.identity);
         node.turret = turret;

@@ -773,7 +773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 136, y: -40}
+  m_AnchoredPosition: {x: 190, y: -40}
   m_SizeDelta: {x: 215.778, y: 55.8365}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187242444
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -907,7 +907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129, y: -39.999992}
+  m_AnchoredPosition: {x: 160, y: -40}
   m_SizeDelta: {x: 156, y: 62.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205537396
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2532,6 +2532,7 @@ GameObject:
   - component: {fileID: 1407588825}
   - component: {fileID: 1407588826}
   - component: {fileID: 1407588827}
+  - component: {fileID: 1407588828}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2606,6 +2607,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingMoney: 500
   moneyText: {fileID: 205537396}
+--- !u!114 &1407588828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407588822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45cfc62f06894184da3b28e2cab99f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxUnitsValue: 2
+  unitText: {fileID: 187242444}
 --- !u!1 &1475475129
 GameObject:
   m_ObjectHideFlags: 0
