@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour
     void DamagePlayer()
     {
         EnemySpawner.enemiesAlive--;
-        PlayerStats.playerHealth--;
+        PlayerStats.playerHealth -= this.GetComponent<Enemy>().currentHealth;
         Destroy(gameObject);  
     }
 }

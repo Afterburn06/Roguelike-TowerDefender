@@ -3,21 +3,21 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject turret;
 
     public Vector3 positionOffset;
 
     BuildManager buildManager;
 
-    private Renderer rend;
+    public Renderer rend;
 
-    private Color startColor;
+    public Color startColor;
     public Color hoverColor;
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = this.GetComponent<Renderer>();
 
         startColor = rend.material.color;
 
@@ -26,14 +26,14 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!buildManager.CanBuild || EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }    
-
         if (turret != null || gameObject.layer == 6)
         {
-            Debug.Log("Can't build there!");
+            buildManager.SelectNode(this);
+            return;
+        }
+
+        if (!buildManager.CanBuild || EventSystem.current.IsPointerOverGameObject())
+        {
             return;
         }
 
@@ -42,13 +42,13 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (EventSystem.current.IsPointerOverGameObject() || GameManager.gameOver || !MapGenerator.loaded || !buildManager.CanBuild)
+        if (EventSystem.current.IsPointerOverGameObject() || GameManager.gameOver || !MapGenerator.loaded)
         {
             return;
         }
 
         // If not a path tile
-        if (gameObject.layer != 6 && MapGenerator.loaded)
+        if (gameObject.layer != 6)
         {
             rend.material.color = hoverColor;
         } 

@@ -30,78 +30,82 @@ public class MapGenerator : MonoBehaviour
 
     void Start()
     {
-        loaded = false;
+        // loaded = false;
 
         spawnPoint = new Vector3(mapSizeX / 2, 0, 0);
 
-        GenerateCells();
-    }
-
-    void GenerateCells()
-    {
-        // For each unit of the map
-        for (int x = 0; x < mapSizeX; x++)
-        {
-            for (int z = 0; z < mapSizeZ; z++)
-            {
-                // Create a new cell under the environment GameObject
-                Cell newCell = Instantiate(cellPrefab, new Vector3(x, 0, z), Quaternion.identity);
-                newCell.transform.parent = environmentHolder.transform;
-                
-                // Create the cell with all possible nodes
-                newCell.CreateCell(false, nodeObjects);
-                
-                // Add the new cell to the list of cells
-                cells.Add(newCell);
-            }
-        }
-
-        StartCoroutine(GenerateNodes());
-    }
-
-    IEnumerator GenerateNodes()
-    {
-        // For each cell
-        for (int i = 0; i < cells.Count; i++)
-        {
-            if (cells[i].transform.position.z == 0 && cells[i].transform.position.x == mapSizeX / 2)
-            {
-                cells[i].nodeOptions = startNode;
-            }
-            else if (cells[i].transform.position.z == mapSizeZ - 1 && cells[i].transform.position.x == mapSizeX / 2)
-            {
-                cells[i].nodeOptions = endNode;
-            }
-            else if (cells[i].transform.position.x == mapSizeX / 2)
-            {
-                cells[i].nodeOptions = pathNode;
-            }
-            else
-            {
-                cells[i].nodeOptions = grassNode;
-            }
-            
-            // Collapse the cell
-            CollapseCell(cells[i]);
-
-            yield return new WaitForSeconds(0.025f);
-        }
-
-        surface.BuildNavMesh();
-
-        loaded = true;
-    }
-
-    void CollapseCell(Cell cellToCollapse)
-    {
-        // Get the node to be created
-        Node selectedNode = cellToCollapse.nodeOptions[0];
-
-        // Create the node under the environment GameObject
-        Node createdNode = Instantiate(selectedNode, cellToCollapse.transform.position, selectedNode.transform.rotation);
-        createdNode.transform.parent = environmentHolder.transform;
+        //surface.BuildNavMesh();
         
-        // Destroy the cell
-        Destroy(cellToCollapse.gameObject);
+        loaded = true;
+
+        // GenerateCells();
     }
+
+    //void GenerateCells()
+    //{
+    //    // For each unit of the map
+    //    for (int x = 0; x < mapSizeX; x++)
+    //    {
+    //        for (int z = 0; z < mapSizeZ; z++)
+    //        {
+    //            // Create a new cell under the environment GameObject
+    //            Cell newCell = Instantiate(cellPrefab, new Vector3(x, 0, z), Quaternion.identity);
+    //            newCell.transform.parent = environmentHolder.transform;
+                
+    //            // Create the cell with all possible nodes
+    //            newCell.CreateCell(false, nodeObjects);
+                
+    //            // Add the new cell to the list of cells
+    //            cells.Add(newCell);
+    //        }
+    //    }
+
+    //    StartCoroutine(GenerateNodes());
+    //}
+
+    //IEnumerator GenerateNodes()
+    //{
+    //    // For each cell
+    //    for (int i = 0; i < cells.Count; i++)
+    //    {
+    //        if (cells[i].transform.position.z == 0 && cells[i].transform.position.x == mapSizeX / 2)
+    //        {
+    //            cells[i].nodeOptions = startNode;
+    //        }
+    //        else if (cells[i].transform.position.z == mapSizeZ - 1 && cells[i].transform.position.x == mapSizeX / 2)
+    //        {
+    //            cells[i].nodeOptions = endNode;
+    //        }
+    //        else if (cells[i].transform.position.x == mapSizeX / 2)
+    //        {
+    //            cells[i].nodeOptions = pathNode;
+    //        }
+    //        else
+    //        {
+    //            cells[i].nodeOptions = grassNode;
+    //        }
+            
+    //        // Collapse the cell
+    //        CollapseCell(cells[i]);
+
+    //        yield return new WaitForSeconds(0.001f);
+    //    }
+
+    //    surface.BuildNavMesh();
+
+    //    loaded = true;
+    //}
+
+    //void CollapseCell(Cell cellToCollapse)
+    //{
+    //    // Get the node to be created
+    //    Node selectedNode = cellToCollapse.nodeOptions[0];
+
+    //    // Create the node under the environment GameObject
+    //    Node createdNode = Instantiate(selectedNode, cellToCollapse.transform.position, selectedNode.transform.rotation);
+    //    createdNode.transform.parent = environmentHolder.transform;
+        
+    //    // Destroy the cell
+    //    Destroy(cellToCollapse.gameObject);
+    //}
 }

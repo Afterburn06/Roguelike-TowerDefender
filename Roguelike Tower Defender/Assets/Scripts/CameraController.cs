@@ -37,19 +37,19 @@ public class CameraController : MonoBehaviour
             return;
         }
 
-        if (Input.GetKey("w") && transform.position.z != maxZ)
+        if (Input.GetKey("w") && transform.position.z != minZ)
         {
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime);
         }
-        if (Input.GetKey("s") && transform.position.z != minZ)
+        if (Input.GetKey("s") && transform.position.z != maxZ)
         {
             transform.Translate(Vector3.back * panSpeed * Time.deltaTime);
         }
-        if (Input.GetKey("d") && transform.position.x != maxX)
+        if (Input.GetKey("d") && transform.position.x != minX)
         {
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime);
         }
-        if (Input.GetKey("a") && transform.position.x != minX)
+        if (Input.GetKey("a") && transform.position.x != maxX)
         {
             transform.Translate(Vector3.left * panSpeed * Time.deltaTime);
         }
