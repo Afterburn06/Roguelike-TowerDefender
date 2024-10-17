@@ -6,7 +6,7 @@ public class Turret : MonoBehaviour
     private Enemy targetEnemy;
     private string enemyTag = "Enemy";
 
-    private bool lockedOn;
+    public bool lockedOn;
 
     [Header("Turret Parts")]
     public Transform partToRotate;
@@ -65,7 +65,8 @@ public class Turret : MonoBehaviour
         // If already targetting
         if (lockedOn)
         {
-            // Exit loop
+            // Check if the target is still in range
+            CheckInRange();
             return;
         }
 
@@ -92,7 +93,7 @@ public class Turret : MonoBehaviour
             }
         }
 
-        // If an enemy has been found and it is withing lock on range
+        // If an enemy has been found and it is within lock on range
         if (nearestEnemy != null && shortestDistance <= lockRange)
         {
             // Get it's transform and Enemy script
@@ -119,6 +120,19 @@ public class Turret : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         // Rotate the turret
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
+    void CheckInRange()
+    {
+        // Get the distance to the target
+        float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+        
+        // If the target is not in attack range
+        if (distanceToTarget > attackRange)
+        {
+            // The turret is no longer locked on
+            lockedOn = false;
+        }
     }
 
     // When selected in the editor
