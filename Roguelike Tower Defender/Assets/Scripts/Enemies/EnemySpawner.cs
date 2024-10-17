@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -8,13 +9,14 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Waves")]
     public Wave[] waves;
+    public int waveCount;
+    public float waveCountdown;
+    public TextMeshProUGUI waveText;
+    [HideInInspector]
     public int waveIndex;
 
     [Header("Enemy Spawn Rate")]
     public float spawnRate;
-
-    [Header("Time Per Wave")]
-    public float waveCountdown;
 
     private Countdown countdown;
 
@@ -27,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        waveCount = 0;
         // Get the Countdown script in this scene
         countdown = GameObject.Find("Enemy Spawner").GetComponent<Countdown>();
     }
@@ -39,6 +42,8 @@ public class EnemySpawner : MonoBehaviour
             // Do not execute any more code
             return;
         }
+
+        waveText.text = "Wave: " + waveCount.ToString() + "/" + waves.Length;
 
         // If there are enemies alive and the countdown is not zero
         if (enemiesAlive > 0 && countdown.currentCountdown != 0)
@@ -69,6 +74,8 @@ public class EnemySpawner : MonoBehaviour
         countdown.currentCountdown = waveCountdown;
         // Allow the wave to be skipped
         NextWaveButtonUI.canSkip = true;
+
+        waveCount++;
 
         // For each enemy type
         for (int x = 0; x < waveToSpawn.enemies.Count(); x++)
