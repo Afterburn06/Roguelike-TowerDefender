@@ -8,8 +8,10 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Update()
     {
+        // If there is no target
         if (target == null)
         {
+            // Destroy this object
             Destroy(gameObject);
             return;
         }
@@ -17,10 +19,13 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Damage(Transform enemy)
     {
+        // Get the Enemy script of the damaged object
         Enemy e = enemy.GetComponent<Enemy>();
 
+        // If it is found
         if (e != null)
         {
+            // Damage the enemy
             e.TakeDamage(damage);
         }
     }

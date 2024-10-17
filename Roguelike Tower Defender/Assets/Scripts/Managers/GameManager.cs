@@ -6,14 +6,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // Reset the gameOver variable
         gameOver = false;
     }
 
     void Update()
     {
-        if(PlayerStats.playerHealth == 0)
+        // If the player's health reaches zero
+        if (PlayerStats.playerHealth == 0)
         {
             Debug.Log("Game Over");
+            // Set the gameOver variable to true
             gameOver = true;
         }
     }

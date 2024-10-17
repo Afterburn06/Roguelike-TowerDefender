@@ -4,16 +4,16 @@ using UnityEngine.UI;
 public class EnemyHealthBars : MonoBehaviour
 {
     private Image healthBar;
-    private Enemy thisEnemy;
+    private Enemy enemy;
 
     void Start()
     {
         healthBar = GetComponent<Image>();
-        thisEnemy = GetComponentInParent<Enemy>();
+        enemy = GetComponentInParent<Enemy>();
     }
 
     void Update()
     {
-        healthBar.fillAmount = thisEnemy.currentHealth / thisEnemy.startHealth;
+        healthBar.fillAmount = enemy.currentHealth / enemy.startHealth;
     }
 }

@@ -4,27 +4,30 @@ using UnityEngine.SceneManagement;
 public class Inventory : MonoBehaviour
 {
     [Header("Buttons")]
-    public CurrentUnitButton buttonOne;
-    public CurrentUnitButton buttonTwo;
-    public CurrentUnitButton buttonThree;
-    public CurrentUnitButton buttonFour;
-    public CurrentUnitButton buttonFive;
+    public EquippedTurretButton buttonOne;
+    public EquippedTurretButton buttonTwo;
+    public EquippedTurretButton buttonThree;
+    public EquippedTurretButton buttonFour;
+    public EquippedTurretButton buttonFive;
 
-    [Header("Units")]
-    public static GameObject unitOne;
-    public static GameObject unitTwo;
-    public static GameObject unitThree;
-    public static GameObject unitFour;
-    public static GameObject unitFive;
+    [Header("Turrets")]
+    public static GameObject turretOne;
+    public static GameObject turretTwo;
+    public static GameObject turretThree;
+    public static GameObject turretFour;
+    public static GameObject turretFive;
 
+    // Exit Button
     public void Exit()
     {
-        unitOne = buttonOne.myUnit;
-        unitTwo = buttonTwo.myUnit;
-        unitThree = buttonThree.myUnit;
-        unitFour = buttonFour.myUnit;
-        unitFive = buttonFive.myUnit;
+        // Set static variables to the turrets in the equipped turret buttons
+        turretOne = buttonOne.myTurret;
+        turretTwo = buttonTwo.myTurret;
+        turretThree = buttonThree.myTurret;
+        turretFour = buttonFour.myTurret;
+        turretFive = buttonFive.myTurret;
 
+        // Load In-game Menu
         SceneManager.LoadScene("IngameMenu");
     }
 }

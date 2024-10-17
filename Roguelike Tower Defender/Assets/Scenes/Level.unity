@@ -1603,7 +1603,7 @@ GameObject:
   - component: {fileID: 103273168}
   - component: {fileID: 103273166}
   m_Layer: 5
-  m_Name: Unit 3
+  m_Name: Turret 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16936,7 +16936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110233592}
   m_Layer: 5
-  m_Name: Unit UI
+  m_Name: Turret UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18391,7 +18391,7 @@ GameObject:
   - component: {fileID: 1238986650}
   - component: {fileID: 1238986648}
   m_Layer: 5
-  m_Name: Unit 5
+  m_Name: Turret 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21128,8 +21128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b33b94cb39847e499729f8fe74a22af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedNode: {fileID: 0}
   nodeUI: {fileID: 1672606923}
+  selectedNode: {fileID: 0}
 --- !u!114 &1407588827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21156,7 +21156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cfc62f06894184da3b28e2cab99f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUnitsValue: 5
+  maxUnitsValue: 50
   unitText: {fileID: 187242444}
 --- !u!4 &1420460842 stripped
 Transform:
@@ -21981,7 +21981,7 @@ GameObject:
   - component: {fileID: 1480448589}
   - component: {fileID: 1480448587}
   m_Layer: 5
-  m_Name: Unit 4
+  m_Name: Turret 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25172,6 +25172,7 @@ MonoBehaviour:
   upgradeCost: {fileID: 1402070096}
   sellAmount: {fileID: 2043739605}
   upgradeButton: {fileID: 1063933259}
+  sellButton: {fileID: 391923623}
   target: {fileID: 0}
   turret: {fileID: 0}
 --- !u!4 &1672830085 stripped
@@ -26160,7 +26161,7 @@ GameObject:
   - component: {fileID: 1751305863}
   - component: {fileID: 1751305861}
   m_Layer: 5
-  m_Name: Unit 2
+  m_Name: Turret 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28898,11 +28899,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0785eaaf277325f4a91286ee5c293c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitOneButton: {fileID: 1925142414}
-  unitTwoButton: {fileID: 1751305861}
-  unitThreeButton: {fileID: 103273166}
-  unitFourButton: {fileID: 1480448587}
-  unitFiveButton: {fileID: 1238986648}
+  turretOneButton: {fileID: 1925142414}
+  turretTwoButton: {fileID: 1751305861}
+  turretThreeButton: {fileID: 103273166}
+  turretFourButton: {fileID: 1480448587}
+  turretFiveButton: {fileID: 1238986648}
   turretOne: {fileID: 0}
   turretTwo: {fileID: 0}
   turretThree: {fileID: 0}
@@ -29736,7 +29737,7 @@ GameObject:
   - component: {fileID: 1925142416}
   - component: {fileID: 1925142414}
   m_Layer: 5
-  m_Name: Unit 1
+  m_Name: Turret 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

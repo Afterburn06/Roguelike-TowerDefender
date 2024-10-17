@@ -7,11 +7,11 @@ public class GameShop : MonoBehaviour
     BuildManager buildManager;
 
     [Header("Buttons")]
-    public Button unitOneButton;
-    public Button unitTwoButton;
-    public Button unitThreeButton;
-    public Button unitFourButton;
-    public Button unitFiveButton;
+    public Button turretOneButton;
+    public Button turretTwoButton;
+    public Button turretThreeButton;
+    public Button turretFourButton;
+    public Button turretFiveButton;
 
     [Header("Turrets")]
     public Turret turretOne;
@@ -22,69 +22,83 @@ public class GameShop : MonoBehaviour
 
     void Start()
     {
-        IntialiseShop();
+        // Set the buildManager variable to the current BuildManager in the scene
         buildManager = BuildManager.instance;
+        
+        IntialiseShop(); 
     }
 
     public void IntialiseShop()
     {
-        TextMeshProUGUI buttonOneText = unitOneButton.GetComponentInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI buttonTwoText = unitTwoButton.GetComponentInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI buttonThreeText = unitThreeButton.GetComponentInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI buttonFourText = unitFourButton.GetComponentInChildren<TextMeshProUGUI>();
-        TextMeshProUGUI buttonFiveText = unitFiveButton.GetComponentInChildren<TextMeshProUGUI>();
+        // Get the text elements of the turret buttons, store them as local variables
+        TextMeshProUGUI buttonOneText = turretOneButton.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI buttonTwoText = turretTwoButton.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI buttonThreeText = turretThreeButton.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI buttonFourText = turretFourButton.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI buttonFiveText = turretFiveButton.GetComponentInChildren<TextMeshProUGUI>();
 
-        if (Inventory.unitOne != null)
+        // If there is a turret assigned to this button
+        if (Inventory.turretOne != null)
         {
-            buttonOneText.text = Inventory.unitOne.name;
-            turretOne = Inventory.unitOne.GetComponent<Turret>();
+            // Set the text of the button to the name of the assigned turret
+            buttonOneText.text = Inventory.turretOne.name;
+            // Get the Turret script of the turret assigned to this button, store in in a variable
+            turretOne = Inventory.turretOne.GetComponent<Turret>();
         }
 
-        if (Inventory.unitTwo != null)
+        // This and the rest of the function follow the same pattern as the last one, just for different buttons
+        if (Inventory.turretTwo != null)
         {
-            buttonTwoText.text = Inventory.unitTwo.name;
-            turretTwo = Inventory.unitTwo.GetComponent<Turret>();
+            buttonTwoText.text = Inventory.turretTwo.name;
+            turretTwo = Inventory.turretTwo.GetComponent<Turret>();
         }
 
-        if (Inventory.unitThree != null)
+        if (Inventory.turretThree != null)
         {
-            buttonThreeText.text = Inventory.unitThree.name;
-            turretThree = Inventory.unitThree.GetComponent<Turret>();
+            buttonThreeText.text = Inventory.turretThree.name;
+            turretThree = Inventory.turretThree.GetComponent<Turret>();
         }
 
-        if (Inventory.unitFour != null)
+        if (Inventory.turretFour != null)
         {
-            buttonFourText.text = Inventory.unitFour.name;
-            turretFour = Inventory.unitFour.GetComponent<Turret>();
+            buttonFourText.text = Inventory.turretFour.name;
+            turretFour = Inventory.turretFour.GetComponent<Turret>();
         }
 
-        if (Inventory.unitFive != null)
+        if (Inventory.turretFive != null)
         {
-            buttonFiveText.text = Inventory.unitFive.name;
-            turretFive = Inventory.unitFive.GetComponent<Turret>();
+            buttonFiveText.text = Inventory.turretFive.name;
+            turretFive = Inventory.turretFive.GetComponent<Turret>();
         }
     }
 
+    // First Turret Button
     public void ButtonOne()
     {
+        // Select the Turret assigned to this button
         buildManager.SelectTurretToBuild(turretOne);
     }
 
+    // Second Turret Button
     public void ButtonTwo()
     {
+        // This and the other buttons follow the same pattern as ButtonOne
         buildManager.SelectTurretToBuild(turretTwo);
     }
 
+    // Third Turret Button
     public void ButtonThree()
     {
         buildManager.SelectTurretToBuild(turretThree);
     }
 
+    // Fourth Turret Button
     public void ButtonFour()
     {
         buildManager.SelectTurretToBuild(turretFour);
     }
 
+    // Fifth Turret Button
     public void ButtonFive()
     {
         buildManager.SelectTurretToBuild(turretFive);

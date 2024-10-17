@@ -626,10 +626,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d657c6022ad3e104f8d0698499b0ee44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 50
-  currentHealth: 0
+  startHealth: 8
+  value: 50
   currentSpeed: 0
-  value: 5
+  currentHealth: 0
 --- !u!114 &1007175931743021540
 MonoBehaviour:
   m_ObjectHideFlags: 0

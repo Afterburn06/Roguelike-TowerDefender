@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 7483073689322165195, guid: d6e1f6e9c8d34114fa04b8b15ab6f941, type: 3}
+  turret: {fileID: 0}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1464305639}
@@ -4111,7 +4111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 648382041229363408, guid: 3952622faf55af54ebd22d294824875b, type: 3}
+  turret: {fileID: 0}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1399139314}
@@ -4266,7 +4266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 5781620324035959017, guid: dbcd371b9e3b0bf4289897118d837037, type: 3}
+  turret: {fileID: 0}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1458082158}
@@ -4555,7 +4555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 9175294825554481533, guid: ee13371d1252344469d08c79dae2e346, type: 3}
+  turret: {fileID: 9175294825554481533, guid: ee13371d1252344469d08c79dae2e346, type: 3}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 869046372}
@@ -5510,7 +5510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 7858083433297966806, guid: e057969102682514788f0a02e5cbb753, type: 3}
+  turret: {fileID: 0}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1023821962}

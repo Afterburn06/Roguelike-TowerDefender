@@ -12,6 +12,13 @@ public class Turret : MonoBehaviour
     public Transform partToRotate;
     public Transform firePoint;
 
+    [Header("Prefabs")]
+    public GameObject levelOnePrefab;
+    public GameObject levelTwoPrefab;
+    public GameObject levelThreePrefab;
+    public GameObject levelFourPrefab;
+    public GameObject levelFivePrefab;
+
     [Header("Stats")]
     private float lockRange;
     public float attackRange;
@@ -25,32 +32,31 @@ public class Turret : MonoBehaviour
     public int levelFourCost;
     public int levelFiveCost;
 
-    [Header("Prefabs")]
-    public GameObject levelOnePrefab;
-    public GameObject levelTwoPrefab;
-    public GameObject levelThreePrefab;
-    public GameObject levelFourPrefab;
-    public GameObject levelFivePrefab;
-
-    [Header("Other")]
+    [Header("Offset")]
     public Vector3 positionOffset;
 
     void Start()
     {
+        // Reset the locked on variable
         lockedOn = false;
-        lockRange = attackRange + attackRange / 3;
+        // Set the lock on range to a quarter of the attack range plus that range
+        lockRange = attackRange + attackRange / 4;
 
+        // Start checking for targets every 0.5 seconds
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     protected virtual void Update()
     {
+        // If there is no target
         if (target == null)
         {
+            // The turret is no longer locked on
             lockedOn = false;
             return;
         }
 
+        // Lock onto a target
         LockOnTarget();
     }
 
@@ -66,7 +72,9 @@ public class Turret : MonoBehaviour
         // Create an array, fill it with enemies in range
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         
+        // Reset the nearest enemy variable
         GameObject nearestEnemy = null;
+        // Reset the shortest distance variable
         float shortestDistance = Mathf.Infinity;
 
         // For each enemy
@@ -91,6 +99,7 @@ public class Turret : MonoBehaviour
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
             
+            // The turret is locked on
             lockedOn = true;
         }
         else
@@ -102,17 +111,24 @@ public class Turret : MonoBehaviour
 
     void LockOnTarget()
     {
+        // Get the direction to the target
         Vector3 dir = target.position - transform.position;
+        // Get the amount needed to rotate to the target
         Quaternion lookRotation = Quaternion.LookRotation(dir);
+        // Get a Vector3 variable of the rotation required, smoothed
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        // Rotate the turret
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
+    // When selected in the editor
     void OnDrawGizmosSelected()
     {
+        // Draw the attack range
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
+        // Draw the lock on range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, lockRange);
     }
