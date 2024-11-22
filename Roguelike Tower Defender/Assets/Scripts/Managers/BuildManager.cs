@@ -53,13 +53,20 @@ public class BuildManager : MonoBehaviour
             return;
         }
 
+        //
+        if (node.gameObject.layer != turretToBuild.allowedLayer)
+        {
+            Debug.Log("Cannot place that turret here.");
+            return;
+        }
+
         // Reduce the player's money by the turret's build cost
         MoneyManager.currentMoney -= turretToBuild.baseCost;
         // Add a unit to the counter
         TurretManager.currentUnits++;
 
         // Spawn the turret at the selected node's position
-        GameObject turret = (GameObject)Instantiate(turretToBuild.levelOnePrefab, node.transform.position + turretToBuild.positionOffset, Quaternion.identity);
+        GameObject turret = (GameObject)Instantiate(turretToBuild.basePrefab, node.transform.position + turretToBuild.positionOffset, Quaternion.identity);
         // Get the placed turret's script
         Turret script = turret.GetComponent<Turret>();
         

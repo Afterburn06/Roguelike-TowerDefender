@@ -76,12 +76,12 @@ public class NodeUI : MonoBehaviour
         // If the player has enough money
         if (MoneyManager.currentMoney >= cost)
         {
-            // Get the upgrade cost
-            GetUpgradeCost();
             // Take away money equal to the turret's cost
             MoneyManager.currentMoney -= cost;
             // Level up the turret
             turret.level++;
+            // Get the upgrade cost
+            GetUpgradeCost();
             // Reload the UI with the new stats
             PopulateUI(turret);
         }

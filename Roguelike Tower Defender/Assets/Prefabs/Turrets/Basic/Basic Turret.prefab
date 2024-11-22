@@ -1,5 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &714116669668463499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6612818477434587892}
+  m_Layer: 0
+  m_Name: Level One
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6612818477434587892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714116669668463499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8352379699267337604}
+  - {fileID: 738024810074105417}
+  - {fileID: 4350644535854451398}
+  - {fileID: 5087159233417664689}
+  - {fileID: 5311261575957555672}
+  - {fileID: 3358284990125367871}
+  - {fileID: 8317065978483004508}
+  - {fileID: 6786916370109743325}
+  - {fileID: 7440083056551251096}
+  m_Father: {fileID: 8711375422852947822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1254183596083427295
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,7 +66,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.008, y: -0.30209222, z: 1.09}
-  m_LocalScale: {x: 6.622988, y: 6.622988, z: 6.622988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8711375422852947822}
@@ -62,7 +102,7 @@ Transform:
   m_LocalScale: {x: 1.6106567, y: 1.6106567, z: 1.6106567}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4287701717527117681
 MeshFilter:
@@ -145,7 +185,7 @@ Transform:
   m_LocalScale: {x: 0.5458873, y: 0.5458873, z: 0.5458873}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6105913419617721635
 MeshFilter:
@@ -226,15 +266,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8352379699267337604}
-  - {fileID: 738024810074105417}
-  - {fileID: 4350644535854451398}
-  - {fileID: 5087159233417664689}
-  - {fileID: 5311261575957555672}
-  - {fileID: 3358284990125367871}
-  - {fileID: 8317065978483004508}
-  - {fileID: 6786916370109743325}
-  - {fileID: 7440083056551251096}
+  - {fileID: 6612818477434587892}
   - {fileID: 7660582943752127432}
   m_Father: {fileID: 8767117649372685303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -269,7 +301,7 @@ Transform:
   m_LocalScale: {x: 0.09930946, y: 0.09930946, z: 0.09930946}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6156133994211251185
 MeshFilter:
@@ -352,7 +384,7 @@ Transform:
   m_LocalScale: {x: 0.20861812, y: 0.20861812, z: 0.20861812}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3181538836767717081
 MeshFilter:
@@ -435,7 +467,7 @@ Transform:
   m_LocalScale: {x: 0.09930946, y: 0.09930946, z: 0.09930946}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6453195150431186351
 MeshFilter:
@@ -515,10 +547,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0.000000029802322, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.511659, y: -1.195828, z: 0}
-  m_LocalScale: {x: 0.1900934, y: 0.1900934, z: 0.35838866}
+  m_LocalScale: {x: 0.1900934, y: 0.19009341, z: 0.35838863}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &16188435092838205
 MeshFilter:
@@ -601,7 +633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2199900912268278006
 MeshFilter:
@@ -684,7 +716,7 @@ Transform:
   m_LocalScale: {x: 0.20861812, y: 0.20861812, z: 0.20861812}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1893060973328504377
 MeshFilter:
@@ -764,10 +796,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0.000000029802322, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0.5343404, y: -1.195828, z: 0}
-  m_LocalScale: {x: 0.1900934, y: 0.1900934, z: 0.35838866}
+  m_LocalScale: {x: 0.1900934, y: 0.19009341, z: 0.35838863}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8711375422852947822}
+  m_Father: {fileID: 6612818477434587892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8136840667586389250
 MeshFilter:
@@ -866,19 +898,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 8711375422852947822}
   firePoint: {fileID: 7660582943752127432}
+  allowedLayer: 7
+  basePrefab: {fileID: 9175294825554481533}
+  levelOneModel: {fileID: 714116669668463499}
+  levelTwoModel: {fileID: 0}
+  levelThreeModel: {fileID: 0}
+  levelFourModel: {fileID: 0}
+  levelFiveModel: {fileID: 0}
   attackRange: 2
   turnSpeed: 10
   level: 0
+  damage: 1
   baseCost: 200
   levelTwoCost: 150
   levelThreeCost: 250
   levelFourCost: 350
   levelFiveCost: 500
-  levelOnePrefab: {fileID: 9175294825554481533}
-  levelTwoPrefab: {fileID: 0}
-  levelThreePrefab: {fileID: 0}
-  levelFourPrefab: {fileID: 0}
-  levelFivePrefab: {fileID: 0}
   positionOffset: {x: 0, y: 0.43, z: 0}
   shotsPerSecond: 1
   bulletPrefab: {fileID: 4516719892790427382, guid: e122e2ea6f2c2004b94ed6b97798b0ce, type: 3}

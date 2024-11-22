@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 2767918404995664407}
   - component: {fileID: 3097677032223053469}
   - component: {fileID: -8522013252108330575}
+  - component: {fileID: -5147101067765483418}
   m_Layer: 0
   m_Name: Vampire
   m_TagString: Enemy
@@ -477,6 +478,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9529a7725985d488787631e2804e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &-5147101067765483418
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339645381986117704}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2156078
+  m_Height: 1.0526407
+  m_Direction: 1
+  m_Center: {x: -0.008224564, y: 0.34175423, z: 0.040760458}
 --- !u!1 &5678242820689628476
 GameObject:
   m_ObjectHideFlags: 0

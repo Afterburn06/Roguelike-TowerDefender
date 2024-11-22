@@ -6,24 +6,29 @@ public class Turret : MonoBehaviour
     private Enemy targetEnemy;
     private string enemyTag = "Enemy";
 
-    public bool lockedOn;
+    private bool lockedOn;
 
     [Header("Turret Parts")]
     public Transform partToRotate;
     public Transform firePoint;
+    public int allowedLayer;
 
     [Header("Prefabs")]
-    public GameObject levelOnePrefab;
-    public GameObject levelTwoPrefab;
-    public GameObject levelThreePrefab;
-    public GameObject levelFourPrefab;
-    public GameObject levelFivePrefab;
+    public GameObject basePrefab;
+
+    [Header("Models")]
+    public GameObject levelOneModel;
+    public GameObject levelTwoModel;
+    public GameObject levelThreeModel;
+    public GameObject levelFourModel;
+    public GameObject levelFiveModel;
 
     [Header("Stats")]
-    private float lockRange;
     public float attackRange;
+    private float lockRange;
     public float turnSpeed;
     public int level;
+    public int damage;
 
     [Header("Purchase / Upgrade Costs")]
     public int baseCost;
@@ -35,7 +40,7 @@ public class Turret : MonoBehaviour
     [Header("Offset")]
     public Vector3 positionOffset;
 
-    void Start()
+    protected virtual void Start()
     {
         // Reset the locked on variable
         lockedOn = false;
@@ -60,7 +65,7 @@ public class Turret : MonoBehaviour
         LockOnTarget();
     }
 
-    void UpdateTarget()
+    protected virtual void UpdateTarget()
     {
         // If already targetting
         if (lockedOn)
@@ -110,7 +115,7 @@ public class Turret : MonoBehaviour
         }
     }
 
-    void LockOnTarget()
+    protected virtual void LockOnTarget()
     {
         // Get the direction to the target
         Vector3 dir = target.position - transform.position;
@@ -122,7 +127,7 @@ public class Turret : MonoBehaviour
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
-    void CheckInRange()
+    protected virtual void CheckInRange()
     {
         // Get the distance to the target
         float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
@@ -136,7 +141,7 @@ public class Turret : MonoBehaviour
     }
 
     // When selected in the editor
-    void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         // Draw the attack range
         Gizmos.color = Color.red;

@@ -10,7 +10,7 @@ public class Node : MonoBehaviour
 
     [Header("Appearance")]
     public Renderer rend;
-    public Color startColour;
+    private Color startColour;
     public Color hoverColour;
 
     void Start()
@@ -28,8 +28,13 @@ public class Node : MonoBehaviour
     // When the mouse is clicked on this node
     void OnMouseDown()
     {
-        // IF there is a turret on this node and it is not a path node
-        if (turret != null || gameObject.layer == 6)
+        if (gameObject.layer == 6)
+        {
+            return;
+        }
+
+        // If there is a turret on this node already
+        if (turret != null)
         {
             // Select this node
             buildManager.SelectNode(this);

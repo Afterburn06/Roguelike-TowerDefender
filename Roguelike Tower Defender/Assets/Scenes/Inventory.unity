@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a94d01ef889964580592f1cb351f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUnit: {fileID: 0}
+  myTurret: {fileID: 0}
   myText: {fileID: 1584144646}
 --- !u!1 &215189015
 GameObject:
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a94d01ef889964580592f1cb351f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUnit: {fileID: 0}
+  myTurret: {fileID: 0}
   myText: {fileID: 1123753427}
 --- !u!1 &659202395
 GameObject:
@@ -1338,7 +1338,7 @@ GameObject:
   - component: {fileID: 749208997}
   - component: {fileID: 749209000}
   m_Layer: 5
-  m_Name: Unit 3
+  m_Name: Slugger Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  turret: {fileID: 9133056204388458670, guid: 71fc65ef846ee894d8027fbd46617ebf, type: 3}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1464305639}
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a94d01ef889964580592f1cb351f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUnit: {fileID: 0}
+  myTurret: {fileID: 0}
   myText: {fileID: 388796213}
 --- !u!1 &944776859
 GameObject:
@@ -2016,7 +2016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a94d01ef889964580592f1cb351f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUnit: {fileID: 0}
+  myTurret: {fileID: 0}
   myText: {fileID: 1862843538}
 --- !u!1 &1023821960
 GameObject:
@@ -3008,14 +3008,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f4c06b0d9a9c04792be13288748df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 659202397}
-  statText: {fileID: 1345900620}
-  currentUnit: {fileID: 0}
   buttonOne: {fileID: 896507099}
   buttonTwo: {fileID: 204609338}
   buttonThree: {fileID: 645186396}
   buttonFour: {fileID: 1333202776}
   buttonFive: {fileID: 944776864}
+  image: {fileID: 659202397}
+  statText: {fileID: 1345900620}
+  currentUnit: {fileID: 0}
 --- !u!114 &1261276941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3293,7 +3293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a94d01ef889964580592f1cb351f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myUnit: {fileID: 0}
+  myTurret: {fileID: 0}
   myText: {fileID: 1108676801}
 --- !u!1 &1345900618
 GameObject:
@@ -3979,7 +3979,7 @@ GameObject:
   - component: {fileID: 1477101159}
   - component: {fileID: 1477101162}
   m_Layer: 5
-  m_Name: Unit 4
+  m_Name: Spitter Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4111,7 +4111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  turret: {fileID: 3043120329231575614, guid: 0c322af50892a5b43993d651228dc722, type: 3}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1399139314}
@@ -4134,7 +4134,7 @@ GameObject:
   - component: {fileID: 1491026998}
   - component: {fileID: 1491027001}
   m_Layer: 5
-  m_Name: Unit 2
+  m_Name: Sniper Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4266,7 +4266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  turret: {fileID: 4188017148130874893, guid: 9e20a60bf57858a4d86cf242b3cb23a9, type: 3}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1458082158}
@@ -5378,7 +5378,7 @@ GameObject:
   - component: {fileID: 2008122550}
   - component: {fileID: 2008122553}
   m_Layer: 5
-  m_Name: Unit 5
+  m_Name: Farm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5510,7 +5510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bf35567d3e7d445a5f3134fab7627e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  turret: {fileID: 5675605273889313576, guid: 3ec66f70cc527664187b36e2fd3c35b3, type: 3}
   image: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1023821962}

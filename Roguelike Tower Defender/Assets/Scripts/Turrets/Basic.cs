@@ -45,6 +45,7 @@ public class Basic : Turret
         // If there is a script
         if (bullet != null)
         {
+            bullet.GetReference(this.GetComponent<Turret>(), this.transform);
             // Make the bullet seek the target enemy
             bullet.Seek(target);
         }
