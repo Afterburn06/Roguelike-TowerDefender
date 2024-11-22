@@ -17,6 +17,15 @@ public class Inventory : MonoBehaviour
     public static GameObject turretFour;
     public static GameObject turretFive;
 
+    [Header("Materials")]
+    public int materialOneAmount;
+    public int MaterialTwoAmount;
+
+    void Start()
+    {
+        
+    }
+
     // Exit Button
     public void Exit()
     {

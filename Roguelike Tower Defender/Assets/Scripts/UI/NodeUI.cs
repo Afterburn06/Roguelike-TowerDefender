@@ -77,26 +77,7 @@ public class NodeUI : MonoBehaviour
 
         levelText.text = "Level " + t.level;
 
-        if (t.GetComponent<Basic>() != null)
-        {
-            turretImage.sprite = basicImage;
-        }
-        else if (t.GetComponent<Sniper>() != null)
-        {
-            turretImage.sprite = sniperImage;
-        }
-        else if (t.GetComponent<Slugger>() != null)
-        {
-            turretImage.sprite = sluggerImage;
-        }
-        else if (t.GetComponent<Spitter>() != null)
-        {
-            turretImage.sprite = spitterImage;
-        }
-        else if (t.GetComponent<Farm>() != null)
-        {
-            turretImage.sprite = farmImage;
-        }
+        turretImage.sprite = t.turretSprite;
 
         t.GetUpgradeText(this);
 

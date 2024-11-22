@@ -1,8 +1,9 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    public Sprite turretSprite;
+
     protected private Transform target;
     private Enemy targetEnemy;
     private string enemyTag = "Enemy";
@@ -22,6 +23,8 @@ public class Turret : MonoBehaviour
     private float lockRange;
     public float turnSpeed;
     public int level;
+    public static int tier;
+    public int tierHolder;
     public float damage;
     public bool detectHidden;
 
@@ -141,6 +144,11 @@ public class Turret : MonoBehaviour
     }
 
     public virtual void GetUpgradeText(NodeUI uI)
+    {
+
+    }
+
+    public virtual void GetTierUpgradeDetails(InventoryTurretButton button)
     {
 
     }

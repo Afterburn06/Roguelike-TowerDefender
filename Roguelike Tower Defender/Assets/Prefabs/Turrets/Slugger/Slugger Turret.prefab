@@ -896,15 +896,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2659b3bf7a81d140b6a5f8f06800a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turretSprite: {fileID: 21300000, guid: 5d8980e82655ed54180997b8ff6d4a09, type: 3}
   partToRotate: {fileID: 4934641208497358717}
   firePoint: {fileID: 4671393362723875457}
   allowedLayer: 7
   basePrefab: {fileID: 9133056204388458670}
-  levelOneModel: {fileID: 4890041303956550175}
-  levelTwoModel: {fileID: 0}
-  levelThreeModel: {fileID: 0}
-  levelFourModel: {fileID: 0}
-  levelFiveModel: {fileID: 0}
   attackRange: 1.5
   turnSpeed: 10
   level: 0

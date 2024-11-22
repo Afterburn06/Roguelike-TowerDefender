@@ -10,10 +10,17 @@ public class Display : MonoBehaviour
     public EquippedTurretButton buttonThree;
     public EquippedTurretButton buttonFour;
     public EquippedTurretButton buttonFive;
-
+    
     [Header("UI")]
-    public Image image;
-    public TextMeshProUGUI statText;
+    public Image displayImage;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI tierText;
+    public TextMeshProUGUI tierUpgradeText;
+    public TextMeshProUGUI tierUpgradeDetailsText;
+    public TextMeshProUGUI materialOneText;
+    public TextMeshProUGUI materialTwoText;
+    public Image materialOneImage;
+    public Image materialTwoImage;
 
     [HideInInspector]
     public GameObject currentUnit;

@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,9 +6,9 @@ public class InventoryTurretButton : MonoBehaviour
 {
     [Header("Assigned Turret")]
     public GameObject turret;
+    public Turret turretScript;
 
     [Header("UI Elements")]
-    public Image image;
     public Display display;
     public TextMeshProUGUI myText;
 
@@ -26,6 +26,7 @@ public class InventoryTurretButton : MonoBehaviour
         {
             // Set the text to display the turrets name
             myText.text = turret.name;
+            turretScript = turret.GetComponent<Turret>();
         }
         else
         {
@@ -39,7 +40,19 @@ public class InventoryTurretButton : MonoBehaviour
     {
         // Set the display UI element's unit to be the turret assigned to this button
         display.currentUnit = turret;
-        // Make the display UI's text the turret assigned to this button's name
-        display.statText.text = turret.name;
+
+        // Make the display UI values the turret assigned to this button's values
+        display.displayImage.sprite = turretScript.turretSprite;
+
+        Color newColor = display.displayImage.color;
+        newColor.a = 1;
+        display.displayImage.color = newColor;
+
+        display.nameText.text = turret.name;
+        display.tierText.text = "Tier: " + turretScript.tierHolder;
+        display.tierUpgradeText.text = "Tier " + turretScript.tierHolder + " → " + (turretScript.tierHolder + 1);
+
+        // Get tier upgrade details such as stat increases and cost of the upgrade
+        turretScript.GetTierUpgradeDetails(this);
     }
 }
