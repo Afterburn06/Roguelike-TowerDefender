@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Spitter : Turret
 {
@@ -48,6 +48,66 @@ public class Spitter : Turret
             bullet.GetReference(this.GetComponent<Turret>(), this.transform);
             // Make the bullet seek the target enemy
             bullet.Seek(target);
+        }
+    }
+
+    public override void UpgradeTurret()
+    {
+        switch (level)
+        {
+            case 1:
+                damage++;
+                break;
+            case 2:
+                shotsPerSecond += 0.5f;
+                attackRange++;
+                break;
+            case 3:
+                detectHidden = true;
+                damage++;
+                break;
+            case 4:
+                damage += 2;
+                attackRange += 2;
+                shotsPerSecond += 1.5f;
+                break;
+        }
+
+        base.UpgradeTurret();
+    }
+
+    public override void GetUpgradeText(NodeUI uI)
+    {
+        switch (level)
+        {
+            case 1:
+                uI.damageText.text = "Damage: " + damage + "→ " + "2";
+                uI.rangeText.text = "Range: 3";
+                uI.attackSpeedText.text = "Attack Speed: 3";
+                uI.hiddenDetectionText.text = "Hidden Detection: No";
+                uI.otherText.text = "";
+                break;
+            case 2:
+                uI.damageText.text = "Damage: 2";
+                uI.rangeText.text = "Range: 3 → 4";
+                uI.attackSpeedText.text = "Attack Speed: 3 → 3.5";
+                uI.hiddenDetectionText.text = "Hidden Detection: No";
+                uI.otherText.text = "";
+                break;
+            case 3:
+                uI.damageText.text = "Damage: " + damage + "→ " + "3";
+                uI.rangeText.text = "Range: 4";
+                uI.attackSpeedText.text = "Attack Speed: 1";
+                uI.hiddenDetectionText.text = "Hidden Detection: No → Yes";
+                uI.otherText.text = "";
+                break;
+            case 4:
+                uI.damageText.text = "Damage: " + damage + "→ " + "5";
+                uI.rangeText.text = "Range: 4 → 6";
+                uI.attackSpeedText.text = "Attack Speed: 3.5 → 5";
+                uI.hiddenDetectionText.text = "Hidden Detection: Yes";
+                uI.otherText.text = "";
+                break;
         }
     }
 }

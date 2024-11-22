@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
@@ -16,19 +17,13 @@ public class Turret : MonoBehaviour
     [Header("Prefabs")]
     public GameObject basePrefab;
 
-    [Header("Models")]
-    public GameObject levelOneModel;
-    public GameObject levelTwoModel;
-    public GameObject levelThreeModel;
-    public GameObject levelFourModel;
-    public GameObject levelFiveModel;
-
     [Header("Stats")]
     public float attackRange;
     private float lockRange;
     public float turnSpeed;
     public int level;
-    public int damage;
+    public float damage;
+    public bool detectHidden;
 
     [Header("Purchase / Upgrade Costs")]
     public int baseCost;
@@ -138,6 +133,16 @@ public class Turret : MonoBehaviour
             // The turret is no longer locked on
             lockedOn = false;
         }
+    }
+
+    public virtual void UpgradeTurret()
+    {
+        level++;
+    }
+
+    public virtual void GetUpgradeText(NodeUI uI)
+    {
+
     }
 
     // When selected in the editor

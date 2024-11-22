@@ -908,12 +908,13 @@ MonoBehaviour:
   attackRange: 2
   turnSpeed: 10
   level: 0
-  damage: 1
+  damage: 2
+  detectHidden: 0
   baseCost: 200
   levelTwoCost: 150
   levelThreeCost: 250
   levelFourCost: 350
   levelFiveCost: 500
   positionOffset: {x: 0, y: 0.43, z: 0}
-  shotsPerSecond: 1
+  shotsPerSecond: 0.75
   bulletPrefab: {fileID: 4516719892790427382, guid: e122e2ea6f2c2004b94ed6b97798b0ce, type: 3}

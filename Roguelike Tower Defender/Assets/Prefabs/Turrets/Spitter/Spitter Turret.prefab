@@ -255,13 +255,14 @@ MonoBehaviour:
   turnSpeed: 10
   level: 0
   damage: 1
+  detectHidden: 0
   baseCost: 850
   levelTwoCost: 250
   levelThreeCost: 550
   levelFourCost: 850
   levelFiveCost: 1500
   positionOffset: {x: 0, y: 0.43, z: 0}
-  shotsPerSecond: 2
+  shotsPerSecond: 3
   bulletPrefab: {fileID: 4516719892790427382, guid: 55599cd9c527b9e4a84c39fc1eb8f0a6, type: 3}
 --- !u!1 &3672037977943663923
 GameObject:

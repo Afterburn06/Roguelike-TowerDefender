@@ -8,9 +8,22 @@ public class NodeUI : MonoBehaviour
     public GameObject uI;
 
     [Header("Text Elements")]
-    public TextMeshProUGUI upgradeText;
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI damageText;
+    public TextMeshProUGUI rangeText;
+    public TextMeshProUGUI attackSpeedText;
+    public TextMeshProUGUI hiddenDetectionText;
+    public TextMeshProUGUI otherText;
     public TextMeshProUGUI upgradeCost;
     public TextMeshProUGUI sellAmount;
+
+    [Header("Images")]
+    public Image turretImage;
+    public Sprite basicImage;
+    public Sprite sniperImage;
+    public Sprite sluggerImage;
+    public Sprite spitterImage;
+    public Sprite farmImage;
 
     [Header("Buttons")]
     public Button upgradeButton;
@@ -55,16 +68,37 @@ public class NodeUI : MonoBehaviour
         {
             // Disable the upgrade button
             upgradeButton.interactable = false;
-            // Set the upgrade text
-            upgradeText.text = "MAX Level";
         }
         else
         {
             // Enable the upgrade button
             upgradeButton.interactable = true;
-            // Set the upgrade text
-            upgradeText.text = t.level.ToString() + "->" + (t.level + 1).ToString();
         }
+
+        levelText.text = "Level " + t.level;
+
+        if (t.GetComponent<Basic>() != null)
+        {
+            turretImage.sprite = basicImage;
+        }
+        else if (t.GetComponent<Sniper>() != null)
+        {
+            turretImage.sprite = sniperImage;
+        }
+        else if (t.GetComponent<Slugger>() != null)
+        {
+            turretImage.sprite = sluggerImage;
+        }
+        else if (t.GetComponent<Spitter>() != null)
+        {
+            turretImage.sprite = spitterImage;
+        }
+        else if (t.GetComponent<Farm>() != null)
+        {
+            turretImage.sprite = farmImage;
+        }
+
+        t.GetUpgradeText(this);
 
         // Set the cost text to the cost variable
         upgradeCost.text = "Upgrade: $" + cost;
@@ -79,7 +113,7 @@ public class NodeUI : MonoBehaviour
             // Take away money equal to the turret's cost
             MoneyManager.currentMoney -= cost;
             // Level up the turret
-            turret.level++;
+            turret.UpgradeTurret();
             // Get the upgrade cost
             GetUpgradeCost();
             // Reload the UI with the new stats

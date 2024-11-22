@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 5
-  value: 50
+  value: 25
   currentSpeed: 0
   currentHealth: 0
 --- !u!114 &4798427240040795606

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Slugger : Turret
 {
@@ -53,6 +53,69 @@ public class Slugger : Turret
             {
                 bullet.GetReference(this.GetComponent<Turret>(), this.transform);
             }
+        }
+    }
+
+    public override void UpgradeTurret()
+    {
+        switch (level)
+        {
+            case 1:
+                damage++;
+                numOfBullets++;
+                break;
+            case 2:
+                damage++;
+                shotsPerSecond += 0.15f;
+                numOfBullets++;
+                break;
+            case 3:
+                damage += 2;
+                attackRange += 1;
+                shotsPerSecond += 0.1f;
+                break;
+            case 4:
+                damage += 2;
+                shotsPerSecond += 0.5f;
+                numOfBullets += 2;
+                break;
+        }
+
+        base.UpgradeTurret();
+    }
+
+    public override void GetUpgradeText(NodeUI uI)
+    {
+        switch (level)
+        {
+            case 1:
+                uI.damageText.text = "Damage: " + damage + "→ " + "2";
+                uI.rangeText.text = "Range: 1.5";
+                uI.attackSpeedText.text = "Attack Speed: 0.25";
+                uI.hiddenDetectionText.text = "Hidden Detection: No";
+                uI.otherText.text = "Number of Bullets: 5 → 6";
+                break;
+            case 2:
+                uI.damageText.text = "Damage: " + damage + "→ " + "3";
+                uI.rangeText.text = "Range: 1.5";
+                uI.attackSpeedText.text = "Attack Speed: 0.25 → 0.4";
+                uI.hiddenDetectionText.text = "Hidden Detection: No";
+                uI.otherText.text = "Number of Bullets: 6 → 7";
+                break;
+            case 3:
+                uI.damageText.text = "Damage: " + damage + "→ " + "5";
+                uI.rangeText.text = "Range: " + attackRange + "→ 2.5";
+                uI.attackSpeedText.text = "Attack Speed: 0.4 → 0.5";
+                uI.hiddenDetectionText.text = "Hidden Detection: No";
+                uI.otherText.text = "Number of Bullets: 7";
+                break;
+            case 4:
+                uI.damageText.text = "Damage: " + damage + "→ " + "7";
+                uI.rangeText.text = "Range: 2.5";
+                uI.attackSpeedText.text = "Attack Speed: 0.5 → 1";
+                uI.hiddenDetectionText.text = "Hidden Detection: No";
+                uI.otherText.text = "Number of Bullets: 7 → 9";
+                break;
         }
     }
 }

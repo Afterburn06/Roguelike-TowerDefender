@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Farm : Turret
 {
@@ -59,5 +59,40 @@ public class Farm : Turret
     protected override void OnDrawGizmosSelected()
     {
         // Remove Turret script OnDrawGizmosSelected() functionality
+    }
+
+    public override void GetUpgradeText(NodeUI uI)
+    {
+        switch (level)
+        {
+            case 1:
+                uI.damageText.text = "Production: $100 → $200";
+                uI.rangeText.text = "";
+                uI.attackSpeedText.text = "";
+                uI.hiddenDetectionText.text = "";
+                uI.otherText.text = "";
+                break;
+            case 2:
+                uI.damageText.text = "Production: $200 → $350";
+                uI.rangeText.text = "";
+                uI.attackSpeedText.text = "";
+                uI.hiddenDetectionText.text = "";
+                uI.otherText.text = "";
+                break;
+            case 3:
+                uI.damageText.text = "Production: $350 → $500";
+                uI.rangeText.text = "";
+                uI.attackSpeedText.text = "";
+                uI.hiddenDetectionText.text = "";
+                uI.otherText.text = "";
+                break;
+            case 4:
+                uI.damageText.text = "Production: $500 → $700";
+                uI.rangeText.text = "";
+                uI.attackSpeedText.text = "";
+                uI.hiddenDetectionText.text = "";
+                uI.otherText.text = "";
+                break;
+        }
     }
 }

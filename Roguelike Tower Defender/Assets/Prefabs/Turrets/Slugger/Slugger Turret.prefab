@@ -909,11 +909,12 @@ MonoBehaviour:
   turnSpeed: 10
   level: 0
   damage: 1
+  detectHidden: 0
   baseCost: 400
-  levelTwoCost: 0
-  levelThreeCost: 0
-  levelFourCost: 0
-  levelFiveCost: 0
+  levelTwoCost: 200
+  levelThreeCost: 350
+  levelFourCost: 600
+  levelFiveCost: 900
   positionOffset: {x: 0, y: 0.43, z: 0}
   shotsPerSecond: 0.25
   numOfBullets: 5
