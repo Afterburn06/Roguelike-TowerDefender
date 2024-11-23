@@ -18,8 +18,8 @@ public class MainMenu : MonoBehaviour
         PlayerStats.materialOneAmount = 0;
         PlayerStats.materialTwoAmount = 0;
 
-        PlayerStats.equippedTurretOne = 0;
-        PlayerStats.equippedTurretTwo = 0;
+        PlayerStats.equippedTurretOne = 1;
+        PlayerStats.equippedTurretTwo = 2;
         PlayerStats.equippedTurretThree = 0;
         PlayerStats.equippedTurretFour = 0;
         PlayerStats.equippedTurretFive = 0;
