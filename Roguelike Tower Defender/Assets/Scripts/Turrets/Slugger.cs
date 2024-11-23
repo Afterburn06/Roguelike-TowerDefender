@@ -11,6 +11,13 @@ public class Slugger : Turret
 
     private float shotCountdown;
 
+    protected override void Start()
+    {
+        base.Start();
+
+        tier = PlayerStats.sluggerTier;
+    }
+
     protected override void Update()
     {
         base.Update();

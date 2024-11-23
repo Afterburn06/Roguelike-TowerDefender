@@ -25,8 +25,7 @@ public class Turret : MonoBehaviour
     private float lockRange;
     public float turnSpeed;
     public int level;
-    public static int tier;
-    public int tierHolder;
+    public int tier;
     public float damage;
     public bool detectHidden;
 

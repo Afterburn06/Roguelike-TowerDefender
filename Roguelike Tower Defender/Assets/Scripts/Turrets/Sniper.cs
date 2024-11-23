@@ -10,6 +10,13 @@ public class Sniper : Turret
 
     private float shotCountdown;
 
+    protected override void Start()
+    {
+        base.Start();
+
+        tier = PlayerStats.sniperTier;
+    }
+
     protected override void Update()
     {
         // Use the base Turret functionality

@@ -10,6 +10,13 @@ public class Spitter : Turret
 
     private float shotCountdown;
 
+    protected override void Start()
+    {
+        base.Start();
+
+        tier = PlayerStats.spitterTier;
+    }
+
     protected override void Update()
     {
         // Use the base Turret functionality

@@ -4244,9 +4244,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596264109}
-  - {fileID: 2008122548}
-  - {fileID: 749208995}
   - {fileID: 1491026996}
+  - {fileID: 749208995}
+  - {fileID: 2008122548}
   - {fileID: 1477101157}
   m_Father: {fileID: 1733917312}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6969,8 +6969,15 @@ MonoBehaviour:
   buttonThree: {fileID: 645186396}
   buttonFour: {fileID: 1333202776}
   buttonFive: {fileID: 944776864}
+  basicTurret: {fileID: 9175294825554481533, guid: ee13371d1252344469d08c79dae2e346, type: 3}
+  sniperTurret: {fileID: 4188017148130874893, guid: 9e20a60bf57858a4d86cf242b3cb23a9, type: 3}
+  sluggerTurret: {fileID: 9133056204388458670, guid: 71fc65ef846ee894d8027fbd46617ebf, type: 3}
+  spitterTurret: {fileID: 3043120329231575614, guid: 0c322af50892a5b43993d651228dc722, type: 3}
+  farmTurret: {fileID: 5675605273889313576, guid: 3ec66f70cc527664187b36e2fd3c35b3, type: 3}
+  materialOneText: {fileID: 1083992580}
+  materialTwoText: {fileID: 1573392705}
   materialOneAmount: 0
-  MaterialTwoAmount: 0
+  materialTwoAmount: 0
 --- !u!1 &1913917380
 GameObject:
   m_ObjectHideFlags: 0

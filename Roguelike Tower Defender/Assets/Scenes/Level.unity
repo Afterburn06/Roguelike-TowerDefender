@@ -22184,6 +22184,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStartHealth: 100
+  basicTier: 0
+  sniperTier: 0
+  sluggerTier: 0
+  spitterTier: 0
+  farmTier: 0
+  materialOneAmount: 0
+  materialTwoAmount: 0
+  sluggerUnlocked: 0
+  spitterUnlocked: 0
+  farmUnlocked: 0
+  equippedTurretOne: 0
+  equippedTurretTwo: 0
+  equippedTurretThree: 0
+  equippedTurretFour: 0
+  equippedTurretFive: 0
 --- !u!114 &1407588826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22210,7 +22225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6029420db67c1ec47b915f0de7f0a319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMoney: 2147483647
+  startingMoney: 500
   moneyText: {fileID: 205537396}
 --- !u!114 &1407588828
 MonoBehaviour:

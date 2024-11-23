@@ -10,6 +10,11 @@ public class Basic : Turret
 
     private float shotCountdown;
 
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     protected override void Update()
     {
         // Use the base Turret functionality

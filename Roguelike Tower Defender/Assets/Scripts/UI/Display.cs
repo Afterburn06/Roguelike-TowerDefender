@@ -24,12 +24,17 @@ public class Display : MonoBehaviour
 
     [HideInInspector]
     public GameObject currentUnit;
+    private int turretNum;
 
     // Equip to Slot One Button
     public void SlotOne()
     {
         // Set Button One's turret to the one assigned to this button
         buttonOne.myTurret = currentUnit;
+
+        GetTurretNum(buttonOne);
+        PlayerStats.equippedTurretOne = turretNum;
+        
         // Remove this turret from the 
         RemoveFromOtherButtons(buttonOne);
     }
@@ -39,6 +44,10 @@ public class Display : MonoBehaviour
     {
         // This and other Slot buttons follow the same pattern as SlotOne
         buttonTwo.myTurret = currentUnit;
+
+        GetTurretNum(buttonTwo);
+        PlayerStats.equippedTurretTwo = turretNum;
+
         RemoveFromOtherButtons(buttonTwo);
     }
 
@@ -46,6 +55,10 @@ public class Display : MonoBehaviour
     public void SlotThree()
     {
         buttonThree.myTurret = currentUnit;
+
+        GetTurretNum(buttonThree);
+        PlayerStats.equippedTurretThree = turretNum;
+
         RemoveFromOtherButtons(buttonThree);
     }
 
@@ -53,6 +66,10 @@ public class Display : MonoBehaviour
     public void SlotFour()
     {
         buttonFour.myTurret = currentUnit;
+
+        GetTurretNum(buttonFour);
+        PlayerStats.equippedTurretFour = turretNum;
+
         RemoveFromOtherButtons(buttonFour);
     }
 
@@ -60,7 +77,35 @@ public class Display : MonoBehaviour
     public void SlotFive()
     {
         buttonFive.myTurret = currentUnit;
+
+        GetTurretNum(buttonFive);
+        PlayerStats.equippedTurretFive = turretNum;
+
         RemoveFromOtherButtons(buttonFive);
+    }
+
+    void GetTurretNum(EquippedTurretButton button)
+    {
+        if (button.myTurret.name == "Basic Turret")
+        {
+            turretNum = 1;
+        }
+        else if (button.myTurret.name == "Sniper Turret")
+        {
+            turretNum = 2;
+        }
+        else if (button.myTurret.name == "Slugger Turret")
+        {
+            turretNum = 3;
+        }
+        else if (button.myTurret.name == "Spitter Turret")
+        {
+            turretNum = 4;
+        }
+        else if (button.myTurret.name == "Farm")
+        {
+            turretNum = 5;
+        }
     }
 
     public void RemoveFromOtherButtons(EquippedTurretButton slot)
@@ -71,18 +116,22 @@ public class Display : MonoBehaviour
             // Remove the turret just equipped from the other buttons
             if (buttonTwo.myTurret == buttonOne.myTurret)
             {
+                PlayerStats.equippedTurretTwo = 0;
                 buttonTwo.myTurret = null;
             }
             else if (buttonThree.myTurret == buttonOne.myTurret)
             {
+                PlayerStats.equippedTurretThree = 0;
                 buttonThree.myTurret = null;
             }
             else if (buttonFour.myTurret == buttonOne.myTurret)
             {
+                PlayerStats.equippedTurretFour = 0;
                 buttonFour.myTurret = null;
             }
             else if (buttonFive.myTurret == buttonOne.myTurret)
             {
+                PlayerStats.equippedTurretFive = 0;
                 buttonFive.myTurret = null;
             }
         }
@@ -92,18 +141,22 @@ public class Display : MonoBehaviour
             // Remove the turret just equipped from the other buttons
             if (buttonOne.myTurret == buttonTwo.myTurret)
             {
+                PlayerStats.equippedTurretOne = 0;
                 buttonOne.myTurret = null;
             }
             else if (buttonThree.myTurret == buttonTwo.myTurret)
             {
+                PlayerStats.equippedTurretThree = 0;
                 buttonThree.myTurret = null;
             }
             else if (buttonFour.myTurret == buttonTwo.myTurret)
             {
+                PlayerStats.equippedTurretFour = 0;
                 buttonFour.myTurret = null;
             }
             else if (buttonFive.myTurret == buttonTwo.myTurret)
             {
+                PlayerStats.equippedTurretFive = 0;
                 buttonFive.myTurret = null;
             }
         }
@@ -113,18 +166,22 @@ public class Display : MonoBehaviour
             // Remove the turret just equipped from the other buttons
             if (buttonTwo.myTurret == buttonThree.myTurret)
             {
+                PlayerStats.equippedTurretTwo = 0;
                 buttonTwo.myTurret = null;
             }
             else if (buttonOne.myTurret == buttonThree.myTurret)
             {
+                PlayerStats.equippedTurretOne = 0;
                 buttonOne.myTurret = null;
             }
             else if (buttonFour.myTurret == buttonThree.myTurret)
             {
+                PlayerStats.equippedTurretFour = 0;
                 buttonFour.myTurret = null;
             }
             else if (buttonFive.myTurret == buttonThree.myTurret)
             {
+                PlayerStats.equippedTurretFive = 0;
                 buttonFive.myTurret = null;
             }
         }
@@ -134,18 +191,22 @@ public class Display : MonoBehaviour
             // Remove the turret just equipped from the other buttons
             if (buttonTwo.myTurret == buttonFour.myTurret)
             {
+                PlayerStats.equippedTurretTwo = 0;
                 buttonTwo.myTurret = null;
             }
             else if (buttonThree.myTurret == buttonFour.myTurret)
             {
+                PlayerStats.equippedTurretThree = 0;
                 buttonThree.myTurret = null;
             }
             else if (buttonOne.myTurret == buttonFour.myTurret)
             {
+                PlayerStats.equippedTurretOne = 0;
                 buttonOne.myTurret = null;
             }
             else if (buttonFive.myTurret == buttonFour.myTurret)
             {
+                PlayerStats.equippedTurretFive = 0;
                 buttonFive.myTurret = null;
             }
         }
@@ -155,18 +216,22 @@ public class Display : MonoBehaviour
             // Remove the turret just equipped from the other buttons
             if (buttonTwo.myTurret == buttonFive.myTurret)
             {
+                PlayerStats.equippedTurretTwo = 0;
                 buttonTwo.myTurret = null;
             }
             else if (buttonThree.myTurret == buttonFive.myTurret)
             {
+                PlayerStats.equippedTurretThree = 0;
                 buttonThree.myTurret = null;
             }
             else if (buttonFour.myTurret == buttonFive.myTurret)
             {
+                PlayerStats.equippedTurretFour = 0;
                 buttonFour.myTurret = null;
             }
             else if (buttonOne.myTurret == buttonFive.myTurret)
             {
+                PlayerStats.equippedTurretOne = 0;
                 buttonOne.myTurret = null;
             }
         }

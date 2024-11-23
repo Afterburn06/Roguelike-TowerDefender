@@ -33,6 +33,24 @@ public class InventoryTurretButton : MonoBehaviour
             // Make the text blank
             myText.text = "";
         }
+
+        if (turret.name == "Slugger Turret" && !PlayerStats.sluggerUnlocked)
+        {
+            myText.text = "Locked";
+            this.GetComponent<Button>().interactable = false;
+        }
+
+        if (turret.name == "Spitter Turret" && !PlayerStats.spitterUnlocked)
+        {
+            myText.text = "Locked";
+            this.GetComponent<Button>().interactable = false;
+        }
+
+        if (turret.name == "Farm" && !PlayerStats.farmUnlocked)
+        {
+            myText.text = "Locked";
+            this.GetComponent<Button>().interactable = false;
+        }
     }
 
     // When the button is clicked
@@ -49,8 +67,8 @@ public class InventoryTurretButton : MonoBehaviour
         display.displayImage.color = newColor;
 
         display.nameText.text = turret.name;
-        display.tierText.text = "Tier: " + turretScript.tierHolder;
-        display.tierUpgradeText.text = "Tier " + turretScript.tierHolder + " → " + (turretScript.tierHolder + 1);
+        display.tierText.text = "Tier: " + turretScript.tier;
+        display.tierUpgradeText.text = "Tier " + turretScript.tier + " → " + (turretScript.tier + 1);
 
         // Get tier upgrade details such as stat increases and cost of the upgrade
         turretScript.GetTierUpgradeDetails(this);
