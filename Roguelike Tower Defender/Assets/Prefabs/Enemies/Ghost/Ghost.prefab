@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3753010455629683674}
   - component: {fileID: 7869757204057695147}
   - component: {fileID: 2746236834055255115}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arm_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4348602040475602753}
   - component: {fileID: 4574679691510628696}
   - component: {fileID: 7148576139521228671}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,9 +182,9 @@ GameObject:
   - component: {fileID: -6920134103372844838}
   - component: {fileID: -7787380908675140178}
   - component: {fileID: -7336936377053714556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ghost
-  m_TagString: Enemy
+  m_TagString: Hidden Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 10
   value: 50
+  hidden: 1
   currentSpeed: 0
   currentHealth: 0
 --- !u!114 &-7787380908675140178
@@ -308,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 275981262540951975}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +343,7 @@ GameObject:
   - component: {fileID: 7183801306030676904}
   - component: {fileID: 5053924436109911186}
   - component: {fileID: 273317018747433195}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: arm_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

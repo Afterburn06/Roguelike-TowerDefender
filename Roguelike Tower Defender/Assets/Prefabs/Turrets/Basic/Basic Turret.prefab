@@ -904,6 +904,7 @@ MonoBehaviour:
   attackRange: 2
   turnSpeed: 10
   level: 0
+  tierHolder: 0
   damage: 2
   detectHidden: 0
   baseCost: 200

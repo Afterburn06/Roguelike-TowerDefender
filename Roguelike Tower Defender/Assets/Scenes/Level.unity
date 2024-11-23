@@ -12691,8 +12691,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
+    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
     - {fileID: 4673481710397319143, guid: 198ba72e8138a7f438c9abd2ecf518c2, type: 3}
-    amounts: 04000000
+    amounts: 0400000004000000
   - enemies:
     - {fileID: 4673481710397319143, guid: 198ba72e8138a7f438c9abd2ecf518c2, type: 3}
     amounts: 05000000

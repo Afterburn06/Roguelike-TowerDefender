@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [Header("Stats")]
     public float startHealth;
     public int value;
+    public bool hidden;
     
     [HideInInspector]
     public float currentSpeed;

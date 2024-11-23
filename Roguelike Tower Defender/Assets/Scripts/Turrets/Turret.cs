@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
@@ -7,6 +9,7 @@ public class Turret : MonoBehaviour
     protected private Transform target;
     private Enemy targetEnemy;
     private string enemyTag = "Enemy";
+    private string hiddenEnemyTag = "Hidden Enemy";
 
     private bool lockedOn;
 
@@ -74,7 +77,19 @@ public class Turret : MonoBehaviour
         }
 
         // Create an array, fill it with enemies in range
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        GameObject[] enemies = null;
+        
+        if (!detectHidden)
+        {
+            enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        }
+        else if (detectHidden)
+        {
+            GameObject[] hiddenEnemies = GameObject.FindGameObjectsWithTag(hiddenEnemyTag);
+            GameObject[] seenEnemies = GameObject.FindGameObjectsWithTag(enemyTag);
+
+            enemies = hiddenEnemies.Concat(seenEnemies).ToArray();
+        }
         
         // Reset the nearest enemy variable
         GameObject nearestEnemy = null;
