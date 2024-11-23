@@ -118,4 +118,58 @@ public class Sniper : Turret
                 break;
         }
     }
+
+    public override void GetTierUpgradeDetails(InventoryTurretButton button)
+    {
+        if (tier == 1)
+        {
+            button.display.tierUpgradeDetailsText.text = "Damage +3";
+            button.display.materialOneText.text = "5";
+            button.display.materialTwoText.text = "1";
+        }
+        else if (tier == 2)
+        {
+            button.display.tierUpgradeDetailsText.text = "Range +5";
+            button.display.materialOneText.text = "10";
+            button.display.materialTwoText.text = "2";
+        }
+        else if (tier == 3)
+        {
+            button.display.tierUpgradeDetailsText.text = "Damage +5";
+            button.display.materialOneText.text = "20";
+            button.display.materialTwoText.text = "4";
+        }
+        else if (tier == 4)
+        {
+            button.display.tierUpgradeDetailsText.text = "Range +10";
+            button.display.materialOneText.text = "40";
+            button.display.materialTwoText.text = "8";
+        }
+        else
+        {
+            button.display.tierUpgradeDetailsText.text = "MAX TIER UPGRADE REACHED";
+            button.display.materialOneText.text = "";
+            button.display.materialTwoText.text = "";
+        }
+    }
+
+    public override void UpgradeTier(int nextTier)
+    {
+        if (nextTier == 2)
+        {
+            damage += 3;
+        }
+        else if (nextTier == 3)
+        {
+            attackRange += 5;
+        }
+        else if (nextTier == 4)
+        {
+            damage += 5;
+        }
+        else if (nextTier == 5)
+        {
+            attackRange += 10;
+        }
+    }
 }

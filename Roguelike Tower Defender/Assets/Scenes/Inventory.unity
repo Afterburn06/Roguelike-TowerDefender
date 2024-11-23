@@ -2177,7 +2177,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 54
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2370,6 +2370,7 @@ MonoBehaviour:
   turretScript: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1464305639}
+  upgradeButton: {fileID: 1381518936}
   buttonOne: {fileID: 896507099}
   buttonTwo: {fileID: 204609338}
   buttonThree: {fileID: 645186396}
@@ -4450,11 +4451,10 @@ MonoBehaviour:
   tierText: {fileID: 1352660611}
   tierUpgradeText: {fileID: 1386021868}
   tierUpgradeDetailsText: {fileID: 744398701}
-  materialOneText: {fileID: 1083992580}
-  materialTwoText: {fileID: 1573392705}
-  materialOneImage: {fileID: 1674937190}
-  materialTwoImage: {fileID: 1416801394}
+  materialOneText: {fileID: 1479382009}
+  materialTwoText: {fileID: 1209491039}
   currentUnit: {fileID: 0}
+  lastPressedButton: {fileID: 0}
 --- !u!114 &1261276941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6037,6 +6037,7 @@ MonoBehaviour:
   turretScript: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1399139314}
+  upgradeButton: {fileID: 1381518936}
   buttonOne: {fileID: 896507099}
   buttonTwo: {fileID: 204609338}
   buttonThree: {fileID: 645186396}
@@ -6326,6 +6327,7 @@ MonoBehaviour:
   turretScript: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1458082158}
+  upgradeButton: {fileID: 1381518936}
   buttonOne: {fileID: 896507099}
   buttonTwo: {fileID: 204609338}
   buttonThree: {fileID: 645186396}
@@ -6749,6 +6751,7 @@ MonoBehaviour:
   turretScript: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 869046372}
+  upgradeButton: {fileID: 1381518936}
   buttonOne: {fileID: 896507099}
   buttonTwo: {fileID: 204609338}
   buttonThree: {fileID: 645186396}
@@ -8218,6 +8221,7 @@ MonoBehaviour:
   turretScript: {fileID: 0}
   display: {fileID: 1261276940}
   myText: {fileID: 1023821962}
+  upgradeButton: {fileID: 1381518936}
   buttonOne: {fileID: 896507099}
   buttonTwo: {fileID: 204609338}
   buttonThree: {fileID: 645186396}

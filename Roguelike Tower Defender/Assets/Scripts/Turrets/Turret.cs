@@ -166,6 +166,11 @@ public class Turret : MonoBehaviour
 
     }
 
+    public virtual void UpgradeTier(int nextTier)
+    {
+
+    }
+
     // When selected in the editor
     protected virtual void OnDrawGizmosSelected()
     {

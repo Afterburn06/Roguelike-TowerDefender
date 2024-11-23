@@ -1,3 +1,4 @@
+﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,12 +20,11 @@ public class Display : MonoBehaviour
     public TextMeshProUGUI tierUpgradeDetailsText;
     public TextMeshProUGUI materialOneText;
     public TextMeshProUGUI materialTwoText;
-    public Image materialOneImage;
-    public Image materialTwoImage;
 
     [HideInInspector]
     public GameObject currentUnit;
     private int turretNum;
+    public InventoryTurretButton lastPressedButton;
 
     // Equip to Slot One Button
     public void SlotOne()
@@ -82,6 +82,21 @@ public class Display : MonoBehaviour
         PlayerStats.equippedTurretFive = turretNum;
 
         RemoveFromOtherButtons(buttonFive);
+    }
+
+    public void Upgrade()
+    {
+        Turret script = currentUnit.GetComponent<Turret>();
+        script.UpgradeTier(script.tier + 1);
+
+        PlayerStats.materialOneAmount -= Convert.ToInt32(materialOneText.text);
+        PlayerStats.materialTwoAmount -= Convert.ToInt32(materialTwoText.text);
+
+        tierText.text = "Tier: " + script.tier;
+        tierUpgradeText.text = "Tier " + script.tier + " → " + (script.tier + 1);
+
+        // Get tier upgrade details such as stat increases and cost of the upgrade
+        script.GetTierUpgradeDetails(lastPressedButton);
     }
 
     void GetTurretNum(EquippedTurretButton button)

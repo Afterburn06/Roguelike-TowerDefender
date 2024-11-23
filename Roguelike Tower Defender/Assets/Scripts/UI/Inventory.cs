@@ -32,9 +32,6 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        materialOneAmount = PlayerStats.materialOneAmount;
-        materialTwoAmount = PlayerStats.materialTwoAmount;
-
         if (PlayerStats.equippedTurretOne == 0)
         {
             buttonOne.myTurret = null;
@@ -163,8 +160,8 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        materialOneText.text = materialOneAmount.ToString();
-        materialTwoText.text = materialTwoAmount.ToString();
+        materialOneText.text = PlayerStats.materialOneAmount.ToString();
+        materialTwoText.text = PlayerStats.materialTwoAmount.ToString();
     }
 
     // Exit Button
