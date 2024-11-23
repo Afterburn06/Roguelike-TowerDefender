@@ -6972,7 +6972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -187, y: -123}
+  m_AnchoredPosition: {x: 479, y: 26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431062222
@@ -12691,9 +12691,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
     - {fileID: 4673481710397319143, guid: 198ba72e8138a7f438c9abd2ecf518c2, type: 3}
-    amounts: 0400000004000000
+    amounts: 02000000
   - enemies:
     - {fileID: 4673481710397319143, guid: 198ba72e8138a7f438c9abd2ecf518c2, type: 3}
     amounts: 05000000
@@ -12703,12 +12702,74 @@ MonoBehaviour:
   - enemies:
     - {fileID: 5339645381986117704, guid: 4a32ff8c37e830346bc3ce4cb23767e4, type: 3}
     - {fileID: 4673481710397319143, guid: 198ba72e8138a7f438c9abd2ecf518c2, type: 3}
-    amounts: 0300000003000000
+    amounts: 0300000005000000
   - enemies:
     - {fileID: 8442402652269724445, guid: 322c9a75c8fd65a4699bf1452e8027e6, type: 3}
     amounts: 08000000
+  - enemies:
+    - {fileID: 4673481710397319143, guid: 21fd5d0ef2e7beb429175b6a3734126d, type: 3}
+    - {fileID: 4673481710397319143, guid: 198ba72e8138a7f438c9abd2ecf518c2, type: 3}
+    amounts: 0100000005000000
+  - enemies:
+    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
+    amounts: 05000000
+  - enemies:
+    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
+    - {fileID: 5339645381986117704, guid: 4a32ff8c37e830346bc3ce4cb23767e4, type: 3}
+    amounts: 0500000003000000
+  - enemies:
+    - {fileID: 8442402652269724445, guid: 322c9a75c8fd65a4699bf1452e8027e6, type: 3}
+    - {fileID: 5339645381986117704, guid: 4a32ff8c37e830346bc3ce4cb23767e4, type: 3}
+    - {fileID: 4673481710397319143, guid: 198ba72e8138a7f438c9abd2ecf518c2, type: 3}
+    amounts: 050000000500000005000000
+  - enemies:
+    - {fileID: 4673481710397319143, guid: 21fd5d0ef2e7beb429175b6a3734126d, type: 3}
+    - {fileID: 5339645381986117704, guid: ea0a352f73d4bfc4f9fd61a80edf9953, type: 3}
+    amounts: 0100000001000000
+  - enemies:
+    - {fileID: 4673481710397319143, guid: 21fd5d0ef2e7beb429175b6a3734126d, type: 3}
+    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
+    amounts: 010000000a000000
+  - enemies:
+    - {fileID: 4673481710397319143, guid: 21fd5d0ef2e7beb429175b6a3734126d, type: 3}
+    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
+    amounts: 010000000a000000
+  - enemies:
+    - {fileID: 5339645381986117704, guid: ea0a352f73d4bfc4f9fd61a80edf9953, type: 3}
+    - {fileID: 5339645381986117704, guid: 4a32ff8c37e830346bc3ce4cb23767e4, type: 3}
+    amounts: 010000000a000000
+  - enemies:
+    - {fileID: 4367088083147351660, guid: 42a677c39af561247b8804cf75f7d9a0, type: 3}
+    amounts: 07000000
+  - enemies:
+    - {fileID: 4367088083147351660, guid: 42a677c39af561247b8804cf75f7d9a0, type: 3}
+    - {fileID: 4367088083147351660, guid: 3af40c0ee49d57447a0db19e1e9d719c, type: 3}
+    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
+    amounts: 050000000100000005000000
+  - enemies:
+    - {fileID: 4673481710397319143, guid: 21fd5d0ef2e7beb429175b6a3734126d, type: 3}
+    - {fileID: 5339645381986117704, guid: ea0a352f73d4bfc4f9fd61a80edf9953, type: 3}
+    - {fileID: 4367088083147351660, guid: 3af40c0ee49d57447a0db19e1e9d719c, type: 3}
+    amounts: 010000000100000001000000
+  - enemies:
+    - {fileID: 5339645381986117704, guid: 4a32ff8c37e830346bc3ce4cb23767e4, type: 3}
+    - {fileID: 8442402652269724445, guid: 322c9a75c8fd65a4699bf1452e8027e6, type: 3}
+    - {fileID: 4367088083147351660, guid: 8e11094bd5743784b8572d62ccb6ab09, type: 3}
+    amounts: 070000000a0000000a000000
+  - enemies:
+    - {fileID: 4367088083147351660, guid: 42a677c39af561247b8804cf75f7d9a0, type: 3}
+    amounts: 14000000
+  - enemies:
+    - {fileID: 8442402652269724445, guid: 42f8e68b31c2ceb42a5c5f2518f420cd, type: 3}
+    amounts: 03000000
+  - enemies:
+    - {fileID: 278367777679853199, guid: 829e141fcc60e6c4c96042afde267852, type: 3}
+    - {fileID: 5339645381986117704, guid: 4a32ff8c37e830346bc3ce4cb23767e4, type: 3}
+    - {fileID: 4367088083147351660, guid: 42a677c39af561247b8804cf75f7d9a0, type: 3}
+    - {fileID: 8442402652269724445, guid: 322c9a75c8fd65a4699bf1452e8027e6, type: 3}
+    amounts: 01000000050000000500000005000000
   waveCount: 0
-  waveCountdown: 10
+  waveCountdown: 60
   waveText: {fileID: 1220780136}
   waveIndex: 0
   spawnRate: 0.75
@@ -12725,7 +12786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCountdown: 0
-  setupTime: 5
+  setupTime: 15
   countdownText: {fileID: 1646253476}
   nextWaveButton: {fileID: 431062220}
 --- !u!4 &811205089 stripped

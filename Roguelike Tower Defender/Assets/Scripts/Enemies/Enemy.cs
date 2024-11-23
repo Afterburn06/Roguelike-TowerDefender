@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     private NavMeshAgent agent;
 
-    void Start()
+    public virtual void Start()
     {
         // Get the NavMeshAgent of this enemy
         agent = GetComponent<NavMeshAgent>();
