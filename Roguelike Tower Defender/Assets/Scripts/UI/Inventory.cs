@@ -38,22 +38,27 @@ public class Inventory : MonoBehaviour
         }
         else if (PlayerStats.equippedTurretOne == 1)
         {
+            turretOne = basicTurret;
             buttonOne.myTurret = basicTurret;
         }
         else if (PlayerStats.equippedTurretOne == 2)
         {
+            turretOne = sniperTurret;
             buttonOne.myTurret = sniperTurret;
         }
         else if (PlayerStats.equippedTurretOne == 3)
         {
+            turretOne = sluggerTurret;
             buttonOne.myTurret = sluggerTurret;
         }
         else if (PlayerStats.equippedTurretOne == 4)
         {
+            turretOne = spitterTurret;
             buttonOne.myTurret = spitterTurret;
         }
         else if (PlayerStats.equippedTurretOne == 5)
         {
+            turretOne = farmTurret;
             buttonOne.myTurret = farmTurret;
         }
 
@@ -63,22 +68,27 @@ public class Inventory : MonoBehaviour
         }
         else if (PlayerStats.equippedTurretTwo == 1)
         {
+            turretTwo = basicTurret;
             buttonTwo.myTurret = basicTurret;
         }
         else if (PlayerStats.equippedTurretTwo == 2)
         {
+            turretTwo = sniperTurret;
             buttonTwo.myTurret = sniperTurret;
         }
         else if (PlayerStats.equippedTurretTwo == 3)
         {
+            turretTwo = sluggerTurret;
             buttonTwo.myTurret = sluggerTurret;
         }
         else if (PlayerStats.equippedTurretTwo == 4)
         {
+            turretTwo = spitterTurret;
             buttonTwo.myTurret = spitterTurret;
         }
         else if (PlayerStats.equippedTurretTwo == 5)
         {
+            turretTwo = farmTurret;
             buttonTwo.myTurret = farmTurret;
         }
 
@@ -88,22 +98,27 @@ public class Inventory : MonoBehaviour
         }
         else if (PlayerStats.equippedTurretThree == 1)
         {
+            turretThree = basicTurret;
             buttonThree.myTurret = basicTurret;
         }
         else if (PlayerStats.equippedTurretThree == 2)
         {
+            turretThree = sniperTurret;
             buttonThree.myTurret = sniperTurret;
         }
         else if (PlayerStats.equippedTurretThree == 3)
         {
+            turretThree = sluggerTurret;
             buttonThree.myTurret = sluggerTurret;
         }
         else if (PlayerStats.equippedTurretThree == 4)
         {
+            turretThree = spitterTurret;
             buttonThree.myTurret = spitterTurret;
         }
         else if (PlayerStats.equippedTurretThree == 5)
         {
+            turretThree = farmTurret;
             buttonThree.myTurret = farmTurret;
         }
 
@@ -113,22 +128,27 @@ public class Inventory : MonoBehaviour
         }
         else if (PlayerStats.equippedTurretFour == 1)
         {
+            turretFour = basicTurret;
             buttonFour.myTurret = basicTurret;
         }
         else if (PlayerStats.equippedTurretFour == 2)
         {
+            turretFour = sniperTurret;
             buttonFour.myTurret = sniperTurret;
         }
         else if (PlayerStats.equippedTurretFour == 3)
         {
+            turretFour = sluggerTurret;
             buttonFour.myTurret = sluggerTurret;
         }
         else if (PlayerStats.equippedTurretFour == 4)
         {
+            turretFour = spitterTurret;
             buttonFour.myTurret = spitterTurret;
         }
         else if (PlayerStats.equippedTurretFour == 5)
         {
+            turretFour = farmTurret;
             buttonFour.myTurret = farmTurret;
         }
 
@@ -138,22 +158,27 @@ public class Inventory : MonoBehaviour
         }
         else if (PlayerStats.equippedTurretFive == 1)
         {
+            turretFive = basicTurret;
             buttonFive.myTurret = basicTurret;
         }
         else if (PlayerStats.equippedTurretFive == 2)
         {
+            turretFive = sniperTurret;
             buttonFive.myTurret = sniperTurret;
         }
         else if (PlayerStats.equippedTurretFive == 3)
         {
+            turretFive = sluggerTurret;
             buttonFive.myTurret = sluggerTurret;
         }
         else if (PlayerStats.equippedTurretFive == 4)
         {
+            turretFive = spitterTurret;
             buttonFive.myTurret = spitterTurret;
         }
         else if (PlayerStats.equippedTurretFive == 5)
         {
+            turretFive = farmTurret;
             buttonFive.myTurret = farmTurret;
         }
     }
