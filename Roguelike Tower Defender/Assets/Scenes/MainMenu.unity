@@ -243,6 +243,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   continueButton: {fileID: 631325430}
   continueText: {fileID: 2131637081}
+  basicTurret: {fileID: 9175294825554481533, guid: ee13371d1252344469d08c79dae2e346, type: 3}
+  sniperTurret: {fileID: 4188017148130874893, guid: 9e20a60bf57858a4d86cf242b3cb23a9, type: 3}
+  sluggerTurret: {fileID: 9133056204388458670, guid: 71fc65ef846ee894d8027fbd46617ebf, type: 3}
+  spitterTurret: {fileID: 3043120329231575614, guid: 0c322af50892a5b43993d651228dc722, type: 3}
+  farmTurret: {fileID: 5675605273889313576, guid: 3ec66f70cc527664187b36e2fd3c35b3, type: 3}
 --- !u!1 &267643138
 GameObject:
   m_ObjectHideFlags: 0
