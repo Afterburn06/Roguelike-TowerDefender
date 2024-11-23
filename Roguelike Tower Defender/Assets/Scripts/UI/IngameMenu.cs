@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class IngameMenu : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class IngameMenu : MonoBehaviour
     public GameObject spitter;
     public GameObject farm;
 
+    public GameObject confirmUI;
+
     void Awake()
     {
         basic.GetComponent<Turret>().tier = PlayerStats.basicTier;
@@ -18,6 +21,11 @@ public class IngameMenu : MonoBehaviour
         slugger.GetComponent<Turret>().tier = PlayerStats.sluggerTier;
         spitter.GetComponent<Turret>().tier = PlayerStats.spitterTier;
         farm.GetComponent<Turret>().tier = PlayerStats.farmTier;
+    }
+
+    private void Start()
+    {
+        confirmUI.SetActive(false);
     }
 
     // Start Level Button
@@ -41,6 +49,16 @@ public class IngameMenu : MonoBehaviour
 
     // Menu Button
     public void Menu()
+    {
+        confirmUI.SetActive(true);
+    }
+
+    public void No()
+    {
+        confirmUI.SetActive(false);
+    }
+
+    public void Yes()
     {
         // Load the main menu
         SceneManager.LoadScene("MainMenu");

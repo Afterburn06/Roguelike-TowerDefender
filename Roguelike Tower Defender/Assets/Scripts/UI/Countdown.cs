@@ -52,7 +52,7 @@ public class Countdown : MonoBehaviour
         }
 
         // Setup is over and the countdown is a third of the total countdown for this wave and it's not the final wave
-        if (setupComplete && currentCountdown < spawner.waveCountdown / 3 && spawner.waveIndex != spawner.waves.Length && NextWaveButtonUI.canSkip)
+        if (setupComplete && currentCountdown < spawner.waveCountdown / 2 && spawner.waveIndex != spawner.waves.Length && NextWaveButtonUI.canSkip)
         {
             // Show skip wave UI
             nextWaveButton.SetActive(true);

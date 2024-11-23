@@ -27,8 +27,8 @@ public class Inventory : MonoBehaviour
     [Header("Materials")]
     public TextMeshProUGUI materialOneText;
     public TextMeshProUGUI materialTwoText;
-    public int materialOneAmount;
-    public int materialTwoAmount;
+    public static int materialOneAmount;
+    public static int materialTwoAmount;
 
     void Start()
     {
