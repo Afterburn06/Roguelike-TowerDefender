@@ -34,6 +34,7 @@ public class NodeUI : MonoBehaviour
     public Turret turret;
 
     private int cost;
+    private int sellValue;
 
     public void SetTarget(Node _target)
     {
@@ -83,6 +84,10 @@ public class NodeUI : MonoBehaviour
 
         // Set the cost text to the cost variable
         upgradeCost.text = "Upgrade: $" + cost;
+
+        GetSellValue();
+
+        sellAmount.text = "Sell: $" + sellValue;
     }
 
     // Upgrade Button
@@ -119,6 +124,37 @@ public class NodeUI : MonoBehaviour
                 break;
             case 4:
                 cost = turret.levelFiveCost;
+                break;
+        }
+    }
+
+    public void Sell()
+    {
+        MoneyManager.currentMoney += sellValue;
+
+        Destroy(target.turret);
+        HideUI();
+    }
+
+    public void GetSellValue()
+    {
+        switch (turret.level)
+        {
+            // Get the upgrade cost, set the cost variable to that amount
+            case 1:
+                sellValue = turret.baseCost / 2;
+                break;
+            case 2:
+                sellValue = (turret.baseCost + turret.levelTwoCost) / 2;
+                break;
+            case 3:
+                sellValue = (turret.baseCost + turret.levelTwoCost + turret.levelThreeCost) / 2;
+                break;
+            case 4:
+                sellValue = (turret.baseCost + turret.levelTwoCost + turret.levelThreeCost + turret.levelFourCost) / 2;
+                break;
+            case 5:
+                sellValue = (turret.baseCost + turret.levelTwoCost + turret.levelThreeCost + turret.levelFourCost + turret.levelFiveCost) / 2;
                 break;
         }
     }
