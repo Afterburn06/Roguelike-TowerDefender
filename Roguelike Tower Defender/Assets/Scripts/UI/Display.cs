@@ -11,7 +11,15 @@ public class Display : MonoBehaviour
     public EquippedTurretButton buttonThree;
     public EquippedTurretButton buttonFour;
     public EquippedTurretButton buttonFive;
-    
+
+    [Header("Other Buttons")]
+    public Button slotOneButton;
+    public Button slotTwoButton;
+    public Button slotThreeButton;
+    public Button slotFourButton;
+    public Button slotFiveButton;
+    public Button upgradeButton;
+
     [Header("UI")]
     public Image displayImage;
     public TextMeshProUGUI nameText;
@@ -21,10 +29,32 @@ public class Display : MonoBehaviour
     public TextMeshProUGUI materialOneText;
     public TextMeshProUGUI materialTwoText;
 
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject currentUnit;
     private int turretNum;
     public InventoryTurretButton lastPressedButton;
+
+    void Update()
+    {
+        if (currentUnit == null)
+        {
+            upgradeButton.interactable = false;
+            slotOneButton.interactable = false;
+            slotTwoButton.interactable = false;
+            slotThreeButton.interactable = false;
+            slotFourButton.interactable = false;
+            slotFiveButton.interactable = false;
+        }
+        else
+        {
+            upgradeButton.interactable = true;
+            slotOneButton.interactable = true;
+            slotTwoButton.interactable = true;
+            slotThreeButton.interactable = true;
+            slotFourButton.interactable = true;
+            slotFiveButton.interactable = true;
+        }
+    }
 
     // Equip to Slot One Button
     public void SlotOne()

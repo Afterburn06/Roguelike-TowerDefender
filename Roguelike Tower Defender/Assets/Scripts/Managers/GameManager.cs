@@ -17,11 +17,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI amountOne;
     public TextMeshProUGUI amountTwo;
     public Button menuButton;
+    public GameObject pauseUI;
 
     void Start()
     {
-        // Reset the gameOver variable
+        Time.timeScale = 1;
         gameOverUI.SetActive(false);
+        pauseUI.SetActive(false);
         gameOver = false;
     }
 
@@ -37,6 +39,26 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        if (SceneManager.GetActiveScene().name == "Level" && Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseUI.activeInHierarchy)
+            {
+                Time.timeScale = 1;
+                pauseUI.SetActive(false);
+            }
+            else if (!pauseUI.activeInHierarchy)
+            {
+                Time.timeScale = 0;
+                pauseUI.SetActive(true);
+            }
+        }
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1;
+        pauseUI.SetActive(false);
     }
 
     void GameOver()

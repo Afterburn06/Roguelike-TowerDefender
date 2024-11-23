@@ -4446,6 +4446,12 @@ MonoBehaviour:
   buttonThree: {fileID: 645186396}
   buttonFour: {fileID: 1333202776}
   buttonFive: {fileID: 944776864}
+  slotOneButton: {fileID: 1703825005}
+  slotTwoButton: {fileID: 215189017}
+  slotThreeButton: {fileID: 1229269307}
+  slotFourButton: {fileID: 1947695354}
+  slotFiveButton: {fileID: 1183548687}
+  upgradeButton: {fileID: 1381518936}
   displayImage: {fileID: 794615883}
   nameText: {fileID: 149065280}
   tierText: {fileID: 1352660611}

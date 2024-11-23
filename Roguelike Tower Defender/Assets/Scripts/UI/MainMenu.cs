@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Button continueButton;
+    public TextMeshProUGUI continueText;
 
     // New Game Button
     public void NewGame()
@@ -33,27 +35,40 @@ public class MainMenu : MonoBehaviour
 
     public void Continue()
     {
-        PlayerData data = SaveSystem.LoadPlayer();
+        try
+        {
+            PlayerData data = SaveSystem.LoadPlayer();
 
-        PlayerStats.basicTier = data.basicTier;
-        PlayerStats.sniperTier = data.sniperTier;
-        PlayerStats.sluggerTier = data.sluggerTier;
-        PlayerStats.spitterTier = data.spitterTier;
-        PlayerStats.farmTier = data.farmTier;
+            PlayerStats.basicTier = data.basicTier;
+            PlayerStats.sniperTier = data.sniperTier;
+            PlayerStats.sluggerTier = data.sluggerTier;
+            PlayerStats.spitterTier = data.spitterTier;
+            PlayerStats.farmTier = data.farmTier;
 
-        PlayerStats.materialOneAmount = data.materialOneAmount;
-        PlayerStats.materialTwoAmount = data.materialTwoAmount;
+            PlayerStats.materialOneAmount = data.materialOneAmount;
+            PlayerStats.materialTwoAmount = data.materialTwoAmount;
 
-        PlayerStats.equippedTurretOne = data.equippedTurretOne;
-        PlayerStats.equippedTurretTwo = data.equippedTurretTwo;
-        PlayerStats.equippedTurretThree = data.equippedTurretThree;
-        PlayerStats.equippedTurretFour = data.equippedTurretFour;
-        PlayerStats.equippedTurretFive = data.equippedTurretFive;
+            PlayerStats.equippedTurretOne = data.equippedTurretOne;
+            PlayerStats.equippedTurretTwo = data.equippedTurretTwo;
+            PlayerStats.equippedTurretThree = data.equippedTurretThree;
+            PlayerStats.equippedTurretFour = data.equippedTurretFour;
+            PlayerStats.equippedTurretFive = data.equippedTurretFive;
 
-        PlayerStats.sluggerUnlocked = data.sluggerUnlocked;
-        PlayerStats.spitterUnlocked = data.spitterUnlocked;
-        PlayerStats.farmUnlocked = data.farmUnlocked;
+            PlayerStats.sluggerUnlocked = data.sluggerUnlocked;
+            PlayerStats.spitterUnlocked = data.spitterUnlocked;
+            PlayerStats.farmUnlocked = data.farmUnlocked;
 
-        SceneManager.LoadScene("IngameMenu");
+            SceneManager.LoadScene("IngameMenu");
+        }
+        catch (System.Exception)
+        {
+            continueButton.interactable = false;
+            continueText.text = "Please create a new game.";
+        }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

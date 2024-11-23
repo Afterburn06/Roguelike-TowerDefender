@@ -18,7 +18,7 @@ public static class SaveSystem
         stream.Close();
     }
 
-    public static PlayerData LoadPlayer( )
+    public static PlayerData LoadPlayer()
     {
         string path = Application.persistentDataPath + "/playerstats.bin";
 
