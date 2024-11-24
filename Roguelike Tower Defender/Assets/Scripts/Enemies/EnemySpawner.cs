@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -18,7 +19,14 @@ public class EnemySpawner : MonoBehaviour
     [Header("Enemy Spawn Rate")]
     public float spawnRate;
 
+    [Header("Necromancer")]
+    public GameObject necromancerUI;
+    public Image necromancerImage;
+    public TextMeshProUGUI necromancerText;
+
+    [Header("Misc")]
     private Countdown countdown;
+    public GameObject hiddenWarningUI;
 
     void Awake()
     {
@@ -29,6 +37,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        necromancerUI.SetActive(false);
+        hiddenWarningUI.SetActive(false);
+
         waveCount = 0;
         // Get the Countdown script in this scene
         countdown = GameObject.Find("Enemy Spawner").GetComponent<Countdown>();
@@ -44,6 +55,15 @@ public class EnemySpawner : MonoBehaviour
         }
 
         waveText.text = "Wave: " + waveCount.ToString() + "/" + waves.Length;
+
+        if (waveCount == 7)
+        {
+            hiddenWarningUI.SetActive(true);
+        }
+        else
+        {
+            hiddenWarningUI.SetActive(false);
+        }
 
         // If there are enemies alive and the countdown is not zero
         if (enemiesAlive > 0 && countdown.currentCountdown != 0)
@@ -88,6 +108,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 // Spawn an enemy
                 SpawnEnemy(waveToSpawn.enemies[x]);
+
                 // Wait a specified amount of time
                 yield return new WaitForSeconds(spawnRate);
             }
@@ -108,6 +129,14 @@ public class EnemySpawner : MonoBehaviour
     {
         // Instantiate the enemy at the spawn point
         Instantiate(enemyToSpawn, MapGenerator.spawnPoint, Quaternion.identity);
+
+        if (enemyToSpawn.name == "Necromancer")
+        {
+            necromancerUI.SetActive(true);
+            Necromancer necro = enemyToSpawn.GetComponent<Necromancer>();
+            necro.SetHealthUI(necromancerUI, necromancerImage, necromancerText);
+        }
+
         // Add one to the count of enemies to spawn
         enemiesAlive++;
     }

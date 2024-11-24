@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Necromancer : Enemy
 {
@@ -8,11 +10,34 @@ public class Necromancer : Enemy
     public GameObject skeleton;
     public GameObject ghost;
 
+    public GameObject necromancerUI;
+    public Image necromancerHealthBar;
+    public TextMeshProUGUI necromancerHealthText;
+
+    public static bool necromancerDead;
+
     public override void Start()
     {
         base.Start();
 
+        necromancerDead = false;
+
         InvokeRepeating("SpawnAllies", 5f, spawnRate);
+    }
+
+    protected override void Update()
+    {
+        // If the enemy has no health or the game is over
+        if (currentHealth <= 0f || GameManager.gameOver)
+        {
+            necromancerDead = true;
+            Die();
+        }
+        else
+        {
+            necromancerHealthBar.fillAmount = currentHealth / startHealth;
+            necromancerHealthText.text = "Necromancer: " + currentHealth + " / " + startHealth;
+        } 
     }
 
     void SpawnAllies()
@@ -47,5 +72,14 @@ public class Necromancer : Enemy
         Vector3 spawnOffset = new Vector3(0, 0, 1);
 
         Instantiate(objectToSpawn, transform.position + spawnOffset, Quaternion.identity);
+    }
+
+    public void SetHealthUI(GameObject ui, Image image, TextMeshProUGUI text)
+    {
+        ui.SetActive(true);
+
+        necromancerUI = ui;
+        necromancerHealthBar = image;
+        necromancerHealthText = text;
     }
 }

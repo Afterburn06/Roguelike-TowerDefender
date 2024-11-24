@@ -26,12 +26,23 @@ public class Enemy : MonoBehaviour
         currentSpeed = agent.speed;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         // If the enemy has no health or the game is over
         if (currentHealth <= 0f || GameManager.gameOver)
         {
             Die();
+        }
+
+        if (GameManager.gamePaused)
+        {
+            Animator anim = this.GetComponent<Animator>();
+            anim.enabled = false;
+        }
+        else
+        {
+            Animator anim = this.GetComponent<Animator>();
+            anim.enabled = true;
         }
     }
 
@@ -41,7 +52,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= amount;
     }
 
-    void Die()
+    protected virtual void Die()
     {
         // Give the player money
         MoneyManager.currentMoney += value;

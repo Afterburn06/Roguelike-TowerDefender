@@ -73,7 +73,7 @@ public class Sniper : Turret
             case 3:
                 damage += 5;
                 attackRange += 2;
-                shotsPerSecond += 0.17f;
+                shotsPerSecond += 0.15f;
                 break;
             case 4:
                 damage += 8;
@@ -91,28 +91,28 @@ public class Sniper : Turret
             case 1:
                 uI.damageText.text = "Damage: " + damage + "→ " + "7";
                 uI.rangeText.text = "Range: " + attackRange + "→ 6";
-                uI.attackSpeedText.text = "Attack Speed: 0.33";
+                uI.attackSpeedText.text = "Attack Speed: 0.2";
                 uI.hiddenDetectionText.text = "Hidden Detection: No";
                 uI.otherText.text = "";
                 break;
             case 2:
                 uI.damageText.text = "Damage: " + damage + "→ " + "10";
                 uI.rangeText.text = "Range: 6";
-                uI.attackSpeedText.text = "Attack Speed: 0.33";
+                uI.attackSpeedText.text = "Attack Speed: 0.2";
                 uI.hiddenDetectionText.text = "Hidden Detection: No → Yes";
                 uI.otherText.text = "";
                 break;
             case 3:
                 uI.damageText.text = "Damage: " + damage + "→ " + "15";
                 uI.rangeText.text = "Range: " + attackRange + "→ 8";
-                uI.attackSpeedText.text = "Attack Speed: 0.5";
+                uI.attackSpeedText.text = "Attack Speed: 0.2 → 0.35";
                 uI.hiddenDetectionText.text = "Hidden Detection: Yes";
                 uI.otherText.text = "";
                 break;
             case 4:
                 uI.damageText.text = "Damage: " + damage + "→ " + "23";
                 uI.rangeText.text = "Range: " + attackRange + "→ 10";
-                uI.attackSpeedText.text = "Attack Speed: 0.5";
+                uI.attackSpeedText.text = "Attack Speed: 0.35";
                 uI.hiddenDetectionText.text = "Hidden Detection: Yes";
                 uI.otherText.text = "";
                 break;
@@ -157,18 +157,22 @@ public class Sniper : Turret
     {
         if (nextTier == 2)
         {
+            tier++;
             damage += 3;
         }
         else if (nextTier == 3)
         {
+            tier++;
             attackRange += 5;
         }
         else if (nextTier == 4)
         {
+            tier++;
             damage += 5;
         }
         else if (nextTier == 5)
         {
+            tier++;
             attackRange += 10;
         }
     }

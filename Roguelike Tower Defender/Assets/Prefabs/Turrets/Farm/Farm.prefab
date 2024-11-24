@@ -184,13 +184,14 @@ MonoBehaviour:
   attackRange: 0
   turnSpeed: 0
   level: 0
+  tier: 0
   damage: 0
   detectHidden: 0
-  baseCost: 0
-  levelTwoCost: 0
-  levelThreeCost: 0
-  levelFourCost: 0
-  levelFiveCost: 0
+  baseCost: 200
+  levelTwoCost: 150
+  levelThreeCost: 300
+  levelFourCost: 500
+  levelFiveCost: 750
   positionOffset: {x: 0, y: 0.1, z: 0}
   levelOneMoneyProduced: 100
   levelTwoMoneyProduced: 200

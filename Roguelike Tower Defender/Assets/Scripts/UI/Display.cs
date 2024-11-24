@@ -47,7 +47,6 @@ public class Display : MonoBehaviour
         }
         else
         {
-            upgradeButton.interactable = true;
             slotOneButton.interactable = true;
             slotTwoButton.interactable = true;
             slotThreeButton.interactable = true;
@@ -117,6 +116,7 @@ public class Display : MonoBehaviour
     public void Upgrade()
     {
         Turret script = currentUnit.GetComponent<Turret>();
+
         script.UpgradeTier(script.tier + 1);
 
         PlayerStats.materialOneAmount -= Convert.ToInt32(materialOneText.text);

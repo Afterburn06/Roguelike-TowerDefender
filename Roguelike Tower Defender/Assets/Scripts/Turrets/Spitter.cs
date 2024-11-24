@@ -156,18 +156,22 @@ public class Spitter : Turret
     {
         if (nextTier == 2)
         {
+            tier++;
             damage++;
         }
         else if (nextTier == 3)
         {
+            tier++;
             attackRange += 2;
         }
         else if (nextTier == 4)
         {
+            tier++;
             shotsPerSecond += 0.75f;
         }
         else if (nextTier == 5)
         {
+            tier++;
             damage += 3;
         }
     }

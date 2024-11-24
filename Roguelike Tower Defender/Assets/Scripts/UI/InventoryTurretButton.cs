@@ -80,7 +80,7 @@ public class InventoryTurretButton : MonoBehaviour
         int materialOneRequired = Convert.ToInt32(display.materialOneText.text);
         int materialTwoRequired = Convert.ToInt32(display.materialTwoText.text);
 
-        if (materialOneRequired > PlayerStats.materialOneAmount && materialTwoRequired > PlayerStats.materialTwoAmount)
+        if (materialOneRequired > PlayerStats.materialOneAmount || materialTwoRequired > PlayerStats.materialTwoAmount)
         {
             upgradeButton.interactable = false;
         }

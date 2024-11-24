@@ -61,19 +61,19 @@ public class Basic : Turret
         switch (level)
         {
             case 1:
-                damage += 2;
+                damage++;
                 break;
             case 2:
                 detectHidden = true;
                 shotsPerSecond += 0.25f;
                 break;
             case 3:
-                damage += 3;
+                damage += 2;
                 attackRange += 1;
                 break;
             case 4:
                 damage += 3;
-                shotsPerSecond += 0.5f; 
+                shotsPerSecond += 0.25f; 
                 break;
         }
 
@@ -85,30 +85,30 @@ public class Basic : Turret
         switch (level)
         {
             case 1:
-                uI.damageText.text = "Damage: " + damage + "→ " + "4";
+                uI.damageText.text = "Damage: " + damage + "→ " + "3";
                 uI.rangeText.text = "Range: 2";
                 uI.attackSpeedText.text = "Attack Speed: 0.75";
                 uI.hiddenDetectionText.text = "Hidden Detection: No";
                 uI.otherText.text = "";
                 break;
             case 2:
-                uI.damageText.text = "Damage: 4";
+                uI.damageText.text = "Damage: 3";
                 uI.rangeText.text = "Range: 2";
                 uI.attackSpeedText.text = "Attack Speed: 0.75 → 1";
                 uI.hiddenDetectionText.text = "Hidden Detection: No → Yes";
                 uI.otherText.text = "";
                 break;
             case 3:
-                uI.damageText.text = "Damage: " + damage + "→ " + "7";
+                uI.damageText.text = "Damage: " + damage + "→ " + "5";
                 uI.rangeText.text = "Range: " + attackRange + "→ 3";
                 uI.attackSpeedText.text = "Attack Speed: 1";
                 uI.hiddenDetectionText.text = "Hidden Detection: Yes";
                 uI.otherText.text = "";
                 break;
             case 4:
-                uI.damageText.text = "Damage: " + damage + "→ " + "10";
+                uI.damageText.text = "Damage: " + damage + "→ " + "8";
                 uI.rangeText.text = "Range: 3";
-                uI.attackSpeedText.text = "Attack Speed: 1 → 1.5";
+                uI.attackSpeedText.text = "Attack Speed: 1 → 1.25";
                 uI.hiddenDetectionText.text = "Hidden Detection: Yes";
                 uI.otherText.text = "";
                 break;
@@ -153,18 +153,22 @@ public class Basic : Turret
     {
         if (nextTier == 2)
         {
+            tier++;
             damage++;
         }
         else if (nextTier == 3)
         {
+            tier++;
             attackRange++;
         }
         else if (nextTier == 4)
         {
+            tier++;
             shotsPerSecond += 0.25f;
         }
         else if (nextTier == 5)
         {
+            tier++;
             damage += 5;
         }
     }

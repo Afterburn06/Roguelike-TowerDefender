@@ -134,18 +134,22 @@ public class Farm : Turret
     {
         if (nextTier == 2)
         {
+            tier++;
             moneyProduced += 25;
         }
         else if (nextTier == 3)
         {
+            tier++;
             moneyProduced += 25;
         }
         else if (nextTier == 4)
         {
+            tier++;
             moneyProduced += 50;
         }
         else if (nextTier == 5)
         {
+            tier++;
             moneyProduced += 100;
         }
     }

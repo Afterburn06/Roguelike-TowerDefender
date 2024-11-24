@@ -904,11 +904,11 @@ MonoBehaviour:
   attackRange: 2
   turnSpeed: 10
   level: 0
-  tierHolder: 0
+  tier: 0
   damage: 2
   detectHidden: 0
-  baseCost: 200
-  levelTwoCost: 150
+  baseCost: 250
+  levelTwoCost: 200
   levelThreeCost: 250
   levelFourCost: 350
   levelFiveCost: 500

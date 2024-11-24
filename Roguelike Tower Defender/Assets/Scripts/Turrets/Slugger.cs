@@ -164,18 +164,22 @@ public class Slugger : Turret
     {
         if (nextTier == 2)
         {
+            tier++;
             damage++;
         }
         else if (nextTier == 3)
         {
+            tier++;
             numOfBullets++;
         }
         else if (nextTier == 4)
         {
+            tier++;
             numOfBullets += 2;
         }
         else if (nextTier == 5)
         {
+            tier++;
             damage += 2;
         }
     }

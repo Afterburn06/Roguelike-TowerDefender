@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static bool gameOver;
+    public static bool gamePaused;
     public EnemySpawner spawner;
     public float amountOneEarned;
     public float amountTwoEarned;
 
     [Header("UI Elements")]
     public GameObject gameOverUI;
+    public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI wavesReachedText;
     public TextMeshProUGUI turretUnlockedText;
     public TextMeshProUGUI amountOne;
@@ -25,32 +27,36 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(false);
         pauseUI.SetActive(false);
         gameOver = false;
+        gamePaused = false;
     }
 
     void Update()
     {
         // If the player's health reaches zero
-        if (PlayerStats.playerHealth == 0)
+        if (PlayerStats.playerHealth <= 0 && !gameOver)
         {
+            PlayerStats.playerHealth = 0;
             GameOver();          
         }
 
-        if (EnemySpawner.enemiesAlive == 0 && spawner.waveCount == 20)
+        if (EnemySpawner.enemiesAlive == 0 && spawner.waveCount == 20 && !gameOver)
         {
             GameOver();
         }
 
-        if (SceneManager.GetActiveScene().name == "Level" && Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name == "Level" && Input.GetKeyDown(KeyCode.Escape) && !gameOver)
         {
             if (pauseUI.activeInHierarchy)
             {
                 Time.timeScale = 1;
                 pauseUI.SetActive(false);
+                gamePaused = false;
             }
             else if (!pauseUI.activeInHierarchy)
             {
                 Time.timeScale = 0;
                 pauseUI.SetActive(true);
+                gamePaused = true;
             }
         }
     }
@@ -59,6 +65,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseUI.SetActive(false);
+        gamePaused = false;
     }
 
     void GameOver()
@@ -68,6 +75,15 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         gameOverUI.SetActive(true);
 
+        if (Necromancer.necromancerDead)
+        {
+            gameOverText.text = "You Win!";
+        }
+        else
+        {
+            gameOverText.text = "Game Over!";
+        }
+
         amountOneEarned = spawner.waveCount;
         amountTwoEarned = spawner.waveCount / 5;
 
@@ -76,50 +92,27 @@ public class GameManager : MonoBehaviour
         PlayerStats.materialOneAmount += (int)amountOneEarned;
         PlayerStats.materialTwoAmount += (int)amountTwoEarned;
 
-        wavesReachedText.text = "Wave Reached: " + spawner.waveCount.ToString();
+        wavesReachedText.text = "Wave Reached: " + spawner.waveCount;
         amountOne.text = amountOneEarned.ToString();
-        amountTwo.text = amountTwo.ToString();
+        amountTwo.text = amountTwoEarned.ToString();
 
-        if (spawner.waveCount >= 5)
+        if (spawner.waveCount >= 5 && spawner.waveCount < 10)
         {
-            if (spawner.waveCount < 10 && !PlayerStats.sluggerUnlocked)
-            {
-                turretUnlockedText.text = "Slugger Turret Unlocked!";
-                PlayerStats.sluggerUnlocked = true;
-            }
-            else if (spawner.waveCount >= 10 && spawner.waveCount < 15 && !PlayerStats.sluggerUnlocked && !PlayerStats.farmUnlocked)
-            {
-                turretUnlockedText.text = "Slugger Turret Unlocked! Farm Unlocked!";
-                PlayerStats.sluggerUnlocked = true;
-                PlayerStats.farmUnlocked = true;
-            }
-            else if (spawner.waveCount >= 10 && spawner.waveCount < 15 && PlayerStats.sluggerUnlocked && !PlayerStats.farmUnlocked)
-            {
-                turretUnlockedText.text = "Farm Unlocked!";
-                PlayerStats.farmUnlocked = true;
-            }
-            else if (spawner.waveCount >= 15 && !PlayerStats.sluggerUnlocked && !PlayerStats.farmUnlocked && !PlayerStats.spitterUnlocked)
-            {
-                turretUnlockedText.text = "Slugger Turret Unlocked! Farm Unlocked! Spitter Turret Unlocked!";
-                PlayerStats.sluggerUnlocked = true;
-                PlayerStats.farmUnlocked = true;
-                PlayerStats.spitterUnlocked = true;
-            }
-            else if (spawner.waveCount >= 15 && PlayerStats.sluggerUnlocked && !PlayerStats.farmUnlocked && !PlayerStats.spitterUnlocked)
-            {
-                turretUnlockedText.text = "Farm Unlocked! Spitter Turret Unlocked!";
-                PlayerStats.farmUnlocked = true;
-                PlayerStats.spitterUnlocked = true;
-            }
-            else if (spawner.waveCount >= 15 && PlayerStats.sluggerUnlocked && PlayerStats.farmUnlocked && !PlayerStats.spitterUnlocked)
-            {
-                turretUnlockedText.text = "Spitter Turret Unlocked!";
-                PlayerStats.spitterUnlocked = true;
-            }
-            else
-            {
-                turretUnlockedText.text = "";
-            }
+            turretUnlockedText.text = "New Turret Unlocked!";
+            PlayerStats.sluggerUnlocked = true;
+        }
+        else if (spawner.waveCount >= 10 && spawner.waveCount < 15)
+        {
+            turretUnlockedText.text = "New Turret Unlocked!";
+            PlayerStats.sluggerUnlocked = true;
+            PlayerStats.farmUnlocked = true;
+        }
+        else if (spawner.waveCount >= 15)
+        {
+            turretUnlockedText.text = "New Turret Unlocked!";
+            PlayerStats.sluggerUnlocked = true;
+            PlayerStats.farmUnlocked = true;
+            PlayerStats.spitterUnlocked = true;
         }
     }
 
