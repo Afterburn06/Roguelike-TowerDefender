@@ -37,6 +37,16 @@ public class NodeUI : MonoBehaviour
     private int cost;
     private int sellValue;
 
+    void Update()
+    {
+        // If the game is paused
+        if (GameManager.gamePaused)
+        {
+            // Hide UI
+            HideUI();
+        }
+    }
+
     public void SetTarget(Node _target)
     {
         // Set the NodeUI target variable to the Node passed in when the method is called
