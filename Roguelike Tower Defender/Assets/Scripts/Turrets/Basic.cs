@@ -152,7 +152,7 @@ public class Basic : Turret
         }
         else
         {
-            button.display.tierUpgradeDetailsText.text = "MAX TIER UPGRADE REACHED";
+            button.display.tierUpgradeDetailsText.text = "";
             button.display.materialOneText.text = "";
             button.display.materialTwoText.text = "";
         }

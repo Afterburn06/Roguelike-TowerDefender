@@ -84,7 +84,20 @@ public class InventoryTurretButton : MonoBehaviour
         // Change text elements
         display.nameText.text = turret.name;
         display.tierText.text = "Tier: " + turretScript.tier;
-        display.tierUpgradeText.text = "Tier " + turretScript.tier + " → " + (turretScript.tier + 1);
+
+        // If the turret is max tier
+        if (turretScript.tier == 5)
+        {
+            // Disable upgrade button
+            display.upgradeButton.interactable = false;
+            // Set text
+            display.tierUpgradeText.text = "Max Tier";
+        }
+        else
+        {
+            // Set text
+            display.tierUpgradeText.text = "Tier " + turretScript.tier + " → " + (turretScript.tier + 1);
+        }
 
         // Get tier upgrade details such as stat increases and cost of the upgrade
         turretScript.GetTierUpgradeDetails(this);

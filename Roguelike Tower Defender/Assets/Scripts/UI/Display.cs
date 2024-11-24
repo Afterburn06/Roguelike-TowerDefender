@@ -154,10 +154,29 @@ public class Display : MonoBehaviour
 
         // Change text elements
         tierText.text = "Tier: " + script.tier;
-        tierUpgradeText.text = "Tier " + script.tier + " → " + (script.tier + 1);
+
+        // If the turret is max tier
+        if (script.tier == 5)
+        {
+            // Disable upgrade button
+            upgradeButton.interactable = false;
+            // Set text
+            tierUpgradeText.text = "Max Tier";
+        }
+        else
+        {
+            // Set text
+            tierUpgradeText.text = "Tier " + script.tier + " → " + (script.tier + 1);
+        }
 
         // Get tier upgrade details such as stat increases and cost of the upgrade
         script.GetTierUpgradeDetails(lastPressedButton);
+
+        // If the turret is max tier
+        if (script.tier == 5)
+        {
+            return;
+        }
 
         if (PlayerStats.materialOneAmount < Convert.ToInt32(materialOneText.text) || PlayerStats.materialTwoAmount < Convert.ToInt32(materialTwoText.text))
         {
