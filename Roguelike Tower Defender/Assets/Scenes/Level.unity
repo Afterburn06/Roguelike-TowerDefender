@@ -24995,7 +24995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cfc62f06894184da3b28e2cab99f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUnitsValue: 50
+  maxUnitsValue: 30
   unitText: {fileID: 187242444}
 --- !u!82 &1407588829
 AudioSource:

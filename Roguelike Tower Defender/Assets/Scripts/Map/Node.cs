@@ -35,8 +35,8 @@ public class Node : MonoBehaviour
             return;
         }
 
-        // If there is a turret on this node already
-        if (turret != null)
+        // If there is a turret on this node already and the game is not paused
+        if (turret != null && !GameManager.gamePaused)
         {
             // Select this node
             buildManager.SelectNode(this);

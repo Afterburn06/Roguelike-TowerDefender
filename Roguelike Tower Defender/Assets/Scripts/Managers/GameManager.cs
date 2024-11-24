@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
         amountTwo.text = amountTwoEarned.ToString();
 
         // If the player passed wave 5 but not wave 10
-        if (spawner.waveCount >= 5 && spawner.waveCount < 10)
+        if (spawner.waveCount >= 5 && spawner.waveCount < 10 && !PlayerStats.sluggerUnlocked)
         {
             // Set text element
             turretUnlockedText.text = "New Turret Unlocked!";
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
             PlayerStats.sluggerUnlocked = true;
         }
         // The player passed wave 10 but not wave 15
-        else if (spawner.waveCount >= 10 && spawner.waveCount < 15)
+        else if (spawner.waveCount >= 10 && spawner.waveCount < 15 && (!PlayerStats.sluggerUnlocked || !PlayerStats.farmUnlocked))
         {
             // Set text element
             turretUnlockedText.text = "New Turret Unlocked!";
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             PlayerStats.farmUnlocked = true;
         }
         // The player passed wave 15
-        else if (spawner.waveCount >= 15)
+        else if (spawner.waveCount >= 15 && (!PlayerStats.sluggerUnlocked || !PlayerStats.farmUnlocked || !PlayerStats.spitterUnlocked))
         {
             // Set text element
             turretUnlockedText.text = "New Turret Unlocked!";
