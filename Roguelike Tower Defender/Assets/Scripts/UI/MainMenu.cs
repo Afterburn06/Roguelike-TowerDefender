@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [Header("Continue UI")]
-    public Button continueButton;
+    [Header("UI")]
+    public GameObject creditsUI;
     public TextMeshProUGUI continueText;
 
     [Header("Turret Prefabs")]
@@ -15,6 +15,37 @@ public class MainMenu : MonoBehaviour
     public GameObject sluggerTurret;
     public GameObject spitterTurret;
     public GameObject farmTurret;
+
+    [Header("Buttons")]
+    public Button continueButton;
+    public Button newGameButton;
+    public Button creditsButton;
+    public Button quitButton;
+    public Button closeButton;
+
+    public void Credits()
+    {
+        // Enable credits UI
+        creditsUI.SetActive(true);
+
+        // Disable buttons
+        newGameButton.interactable = false;
+        creditsButton.interactable = false;
+        continueButton.interactable = false;
+        quitButton.interactable = false;
+    }
+
+    public void Close()
+    {
+        // Disable credits UI
+        creditsUI.SetActive(false);
+
+        // Enable buttons
+        newGameButton.interactable = true;
+        creditsButton.interactable = true;
+        continueButton.interactable = true;
+        quitButton.interactable = true;
+    }
 
     // New Game Button
     public void NewGame()
