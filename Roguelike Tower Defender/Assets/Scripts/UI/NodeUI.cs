@@ -32,6 +32,7 @@ public class NodeUI : MonoBehaviour
     [Header("Misc")]
     public Node target;
     public Turret turret;
+    public GameObject rangeIndicator;
 
     private int cost;
     private int sellValue;
@@ -51,15 +52,21 @@ public class NodeUI : MonoBehaviour
     public void ShowUI()
     {
         // Populate the UI with the selected turret's info
-        PopulateUI(target.turret.GetComponent<Turret>());
+        PopulateUI(turret);
         // Enable the Node UI
         uI.SetActive(true);
+
+        // Turn on the range indicator and set its position and size
+        rangeIndicator.transform.position = new Vector3(target.turret.transform.position.x, 0, target.turret.transform.position.z);
+        rangeIndicator.transform.localScale = new Vector3(turret.attackRange, 0.01f, turret.attackRange);
+        rangeIndicator.SetActive(true);
     }
 
     public void HideUI()
     {
-        // Disable the Node UI
+        // Disable the Node UI and range indicator
         uI.SetActive(false);
+        rangeIndicator.SetActive(false);
     }
 
     public void PopulateUI(Turret t)
@@ -109,6 +116,7 @@ public class NodeUI : MonoBehaviour
             GetUpgradeCost();
             // Reload the UI with the new stats
             PopulateUI(turret);
+            rangeIndicator.transform.localScale = new Vector3(turret.attackRange, 0.01f, turret.attackRange);
         }
     }
 

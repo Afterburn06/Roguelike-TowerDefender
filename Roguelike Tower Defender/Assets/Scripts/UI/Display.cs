@@ -68,7 +68,7 @@ public class Display : MonoBehaviour
         GetTurretNum(buttonOne);
         // Set the PlayerStats variable to that number
         PlayerStats.equippedTurretOne = turretNum;
-        
+
         // Remove this turret from the 
         RemoveFromOtherButtons(buttonOne);
     }
@@ -158,6 +158,11 @@ public class Display : MonoBehaviour
 
         // Get tier upgrade details such as stat increases and cost of the upgrade
         script.GetTierUpgradeDetails(lastPressedButton);
+
+        if (PlayerStats.materialOneAmount < Convert.ToInt32(materialOneText.text) || PlayerStats.materialTwoAmount < Convert.ToInt32(materialTwoText.text))
+        {
+            upgradeButton.GetComponent<Button>().interactable = false;
+        }
     }
 
     void GetTurretNum(EquippedTurretButton button)

@@ -904,12 +904,12 @@ MonoBehaviour:
   attackRange: 2
   turnSpeed: 10
   level: 0
-  tier: 0
+  tier: 3
   damage: 2
   detectHidden: 0
   baseCost: 250
-  levelTwoCost: 200
-  levelThreeCost: 250
+  levelTwoCost: 100
+  levelThreeCost: 200
   levelFourCost: 350
   levelFiveCost: 500
   positionOffset: {x: 0, y: 0.43, z: 0}
