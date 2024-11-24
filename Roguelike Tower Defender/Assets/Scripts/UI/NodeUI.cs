@@ -144,6 +144,8 @@ public class NodeUI : MonoBehaviour
     {
         // Give the player money
         MoneyManager.currentMoney += sellValue;
+        // Take a turret away from the counter of turrets placed
+        TurretManager.currentUnits--;
 
         // Destroy the turret
         Destroy(target.turret);

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BuildManager : MonoBehaviour
@@ -5,6 +6,11 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
 
     private Turret turretToBuild;
+
+    [Header("Warning UIs")]
+    public GameObject placementWarning;
+    public GameObject costWarning;
+    public GameObject maxWarning;
 
     [Header("Node UI")]
     public NodeUI nodeUI;
@@ -39,21 +45,26 @@ public class BuildManager : MonoBehaviour
 
     public void BuildTurretOn(Node node)
     {
-        // If the player does not have enough money to build the turret
-        if (MoneyManager.currentMoney < turretToBuild.baseCost)
+        // If the player tries to build on the wrong kind of tile
+        if (node.gameObject.layer != turretToBuild.allowedLayer)
         {
+            // Show placement warning
+            StartCoroutine(Warn(placementWarning));
             return;
         }
 
         // If the player already has the max number of units
         if (TurretManager.currentUnits == TurretManager.maxUnits)
         {
+            StartCoroutine(Warn(maxWarning));
             return;
         }
 
-        // If the player tries to build on the wrong kind of tile
-        if (node.gameObject.layer != turretToBuild.allowedLayer)
+        // If the player does not have enough money to build the turret
+        if (MoneyManager.currentMoney < turretToBuild.baseCost)
         {
+            // Show placement warning
+            StartCoroutine(Warn(costWarning));
             return;
         }
 
@@ -71,6 +82,16 @@ public class BuildManager : MonoBehaviour
         script.level = 1;
         // Set the node's turret to the one that was placed
         node.turret = turret;
+    }
+
+    IEnumerator Warn(GameObject ui)
+    {
+        // Show warning
+        ui.SetActive(true);
+        // Wait
+        yield return new WaitForSeconds(1.5f);
+        // Hide warning
+        ui.SetActive(false);
     }
 
     public void SelectNode(Node node)
