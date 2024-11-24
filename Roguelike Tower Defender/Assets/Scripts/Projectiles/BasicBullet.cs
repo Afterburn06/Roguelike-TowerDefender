@@ -5,6 +5,7 @@ public class BasicBullet : MonoBehaviour
     [Header("Movespeed")]
     public float speed;
 
+    [Header("Transforms")]
     protected private Transform target;
     protected private Transform turretTransform;
 
@@ -72,6 +73,7 @@ public class BasicBullet : MonoBehaviour
 
     public void GetReference(Turret _turret, Transform _turretTransform)
     {
+        // Set the BasicBullet variables equal to the ones passed in
         turret = _turret;
         turretTransform = _turretTransform;
     }

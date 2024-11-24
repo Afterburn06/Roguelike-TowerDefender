@@ -77,15 +77,19 @@ public class Turret : MonoBehaviour
         // Create an array, fill it with enemies in range
         GameObject[] enemies = null;
         
+        // If the turret can't detect hidden enemies
         if (!detectHidden)
         {
+            // Find unhidden enemies
             enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         }
         else if (detectHidden)
         {
+            // Find hidden and unhidden enemies
             GameObject[] hiddenEnemies = GameObject.FindGameObjectsWithTag(hiddenEnemyTag);
             GameObject[] seenEnemies = GameObject.FindGameObjectsWithTag(enemyTag);
 
+            // Join the two arrays
             enemies = hiddenEnemies.Concat(seenEnemies).ToArray();
         }
         
@@ -151,22 +155,27 @@ public class Turret : MonoBehaviour
         }
     }
 
+    // Method to hold functionality in other turret scripts
     public virtual void UpgradeTurret()
     {
+        // Increase the turret's level
         level++;
     }
 
+    // Method to hold functionality in other turret scripts
     public virtual void GetUpgradeText(NodeUI uI)
     {
 
     }
 
+    // Method to hold functionality in other turret scripts
     public virtual void GetTierUpgradeDetails(InventoryTurretButton button)
     {
 
     }
 
-    public virtual void UpgradeTier(int nextTier)
+    // Method to hold functionality in other turret scripts
+    public virtual void GetTierBonuses()
     {
 
     }

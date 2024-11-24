@@ -20,6 +20,7 @@ public class EquippedTurretButton : MonoBehaviour
             myText.text = myTurret.name;
             myImage.sprite = myTurret.GetComponent<Turret>().turretSprite;
 
+            // Make the image opaque
             Color newColor = myImage.color;
             newColor.a = 1;
             myImage.color = newColor;
@@ -29,6 +30,7 @@ public class EquippedTurretButton : MonoBehaviour
             // Make the button text blank
             myText.text = "";
 
+            // Make the image transparent
             Color newColor = myImage.color;
             newColor.a = 0;
             myImage.color = newColor;

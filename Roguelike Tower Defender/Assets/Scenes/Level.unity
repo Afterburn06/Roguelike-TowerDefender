@@ -13486,6 +13486,7 @@ MonoBehaviour:
   necromancerImage: {fileID: 1281744800}
   necromancerText: {fileID: 1075754765}
   hiddenWarningUI: {fileID: 872971633}
+  spawnPoint: {x: 8, y: -0.25, z: 0.50000095}
 --- !u!114 &806285815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15565,30 +15566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab5201f6f44683488f5a8ce1204a7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSizeX: 17
-  mapSizeZ: 17
-  nodeObjects:
-  - {fileID: 4520630822079954167, guid: fca7d59a91971c84b95c7a657d516064, type: 3}
-  - {fileID: 7472503632412900884, guid: 916bc1fa088345d45babc092ec04d272, type: 3}
-  - {fileID: -4645687044912379256, guid: cfa3ea5481ffff4489721d86712dde8d, type: 3}
-  - {fileID: -7731860821661211710, guid: 17372621289c75742884963d2ec02672, type: 3}
-  - {fileID: -6306385030476696198, guid: 88096c1091c8545409b7be02d82d475b, type: 3}
-  - {fileID: -2290692459701383747, guid: 6fa14ba0002250d489bae2d3d8c4f97c, type: 3}
-  - {fileID: 5692377508053064257, guid: 1f81caa8d24e70644b0713cbcfd12c00, type: 3}
-  - {fileID: -7273035885945857369, guid: 526828df46c95024e92505e2ec571e01, type: 3}
-  - {fileID: -8276079673765993269, guid: ae20fdc71b5fd4543a2ec9c239edcfba, type: 3}
-  grassNode:
-  - {fileID: -4645687044912379256, guid: cfa3ea5481ffff4489721d86712dde8d, type: 3}
-  pathNode:
-  - {fileID: -7731860821661211710, guid: 17372621289c75742884963d2ec02672, type: 3}
-  startNode:
-  - {fileID: 7472503632412900884, guid: 916bc1fa088345d45babc092ec04d272, type: 3}
-  endNode:
-  - {fileID: 4520630822079954167, guid: fca7d59a91971c84b95c7a657d516064, type: 3}
-  cellPrefab: {fileID: 8732421339154275789, guid: 337aad37c9e599c48b17397b3ad3644c, type: 3}
-  cells: []
-  surface: {fileID: 1741566436}
-  environmentHolder: {fileID: 1741566434}
 --- !u!4 &912164291
 Transform:
   m_ObjectHideFlags: 0
@@ -24521,9 +24498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699adec2f5e5f68418da05898b046a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 806285814}
-  amountOneEarned: 0
-  amountTwoEarned: 0
   gameOverUI: {fileID: 1514984119}
   gameOverText: {fileID: 1691083167}
   wavesReachedText: {fileID: 992618812}
@@ -24532,6 +24506,9 @@ MonoBehaviour:
   amountTwo: {fileID: 927744912}
   menuButton: {fileID: 961101990}
   pauseUI: {fileID: 1266649540}
+  spawner: {fileID: 806285814}
+  amountOneEarned: 0
+  amountTwoEarned: 0
 --- !u!4 &1407588824
 Transform:
   m_ObjectHideFlags: 0

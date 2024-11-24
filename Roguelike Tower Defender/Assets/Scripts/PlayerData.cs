@@ -23,6 +23,7 @@ public class PlayerData
 
     public PlayerData (PlayerStats playerStats)
     {
+        // Set the values of this script equal to the ones in the PlayerStats script
         basicTier = PlayerStats.basicTier;
         sniperTier = PlayerStats.sniperTier;
         sluggerTier = PlayerStats.sluggerTier;

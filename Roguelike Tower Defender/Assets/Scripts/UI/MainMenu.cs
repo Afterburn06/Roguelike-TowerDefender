@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Continue UI")]
     public Button continueButton;
     public TextMeshProUGUI continueText;
 
+    [Header("Turret Prefabs")]
     public GameObject basicTurret;
     public GameObject sniperTurret;
     public GameObject sluggerTurret;
@@ -17,6 +19,7 @@ public class MainMenu : MonoBehaviour
     // New Game Button
     public void NewGame()
     {
+        // Reset all stats
         PlayerStats.basicTier = 1;
         PlayerStats.sniperTier = 1;
         PlayerStats.sluggerTier = 1;
@@ -39,15 +42,19 @@ public class MainMenu : MonoBehaviour
         Inventory.turretOne = basicTurret;
         Inventory.turretTwo = sniperTurret;
 
+        // Load the in game menu
         SceneManager.LoadScene("IngameMenu");
     }
 
     public void Continue()
     {
+        // Try to execute code below
         try
         {
+            // Load player data
             PlayerData data = SaveSystem.LoadPlayer();
 
+            // Set PlayerStats variables based on the data
             PlayerStats.basicTier = data.basicTier;
             PlayerStats.sniperTier = data.sniperTier;
             PlayerStats.sluggerTier = data.sluggerTier;
@@ -67,27 +74,38 @@ public class MainMenu : MonoBehaviour
             PlayerStats.spitterUnlocked = data.spitterUnlocked;
             PlayerStats.farmUnlocked = data.farmUnlocked;
 
+            // If PlayerStats first equipped turret number is 1
             if (PlayerStats.equippedTurretOne == 1)
             {
+                // Set the inventory turret one to the basic turret
                 Inventory.turretOne = basicTurret;
             }
+            // If PlayerStats first equipped turret number is 2
             else if (PlayerStats.equippedTurretOne == 2)
             {
+                // Set the inventory turret one to the sniper turret
                 Inventory.turretOne = sniperTurret;
             }
+            // If PlayerStats first equipped turret number is 3
             else if (PlayerStats.equippedTurretOne == 3)
             {
+                // Set the inventory turret one to the slugger turret
                 Inventory.turretOne = sluggerTurret;
             }
+            // If PlayerStats first equipped turret number is 4
             else if (PlayerStats.equippedTurretOne == 4)
             {
+                // Set the inventory turret one to the spitter turret
                 Inventory.turretOne = spitterTurret;
             }
+            // If PlayerStats first equipped turret number is 5
             else if (PlayerStats.equippedTurretOne == 5)
             {
+                // Set the inventory turret one to the farm
                 Inventory.turretOne = farmTurret;
             }
 
+            // The rest of the if else if statements follow the same pattern as the first one, just for different Inventory turrets
             if (PlayerStats.equippedTurretTwo == 1)
             {
                 Inventory.turretTwo = basicTurret;
@@ -172,17 +190,22 @@ public class MainMenu : MonoBehaviour
                 Inventory.turretFive = farmTurret;
             }
 
+            // Load the in game menu
             SceneManager.LoadScene("IngameMenu");
         }
+        // If the above code fails
         catch (System.Exception)
         {
+            // Disable the continue button
             continueButton.interactable = false;
+            // Tell the player to create a new game
             continueText.text = "Please create a new game.";
         }
     }
 
     public void Quit()
     {
+        // Close the app
         Application.Quit();
     }
 }

@@ -28,8 +28,10 @@ public class Node : MonoBehaviour
     // When the mouse is clicked on this node
     void OnMouseDown()
     {
+        // If the node clicked is a path tile
         if (gameObject.layer == 6)
         {
+            // Don't execute further code
             return;
         }
 
@@ -56,8 +58,8 @@ public class Node : MonoBehaviour
     // When the mouse hovers over this node
     void OnMouseEnter()
     {
-        // If the mouse is over another object or the game is over or the map is not loaded
-        if (EventSystem.current.IsPointerOverGameObject() || GameManager.gameOver || !MapGenerator.loaded)
+        // If the mouse is over another object or the game is over
+        if (EventSystem.current.IsPointerOverGameObject() || GameManager.gameOver)
         {
             // Don't execute further code
             return;

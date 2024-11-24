@@ -34,13 +34,16 @@ public class Enemy : MonoBehaviour
             Die();
         }
 
+        // If the game is paused
         if (GameManager.gamePaused)
         {
+            // Pause animations
             Animator anim = this.GetComponent<Animator>();
             anim.enabled = false;
         }
         else
         {
+            // Play animations
             Animator anim = this.GetComponent<Animator>();
             anim.enabled = true;
         }

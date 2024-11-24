@@ -12,7 +12,13 @@ public class Basic : Turret
 
     protected override void Start()
     {
+        // Use base Turret functipo
         base.Start();
+
+        // Get the turret's tier
+        tier = PlayerStats.basicTier;
+        // Get the bonuses from that tier
+        GetTierBonuses();
     }
 
     protected override void Update()
@@ -60,6 +66,7 @@ public class Basic : Turret
     {
         switch (level)
         {
+            // Upgrade the turret based on the level it's at currently
             case 1:
                 damage++;
                 break;
@@ -82,6 +89,7 @@ public class Basic : Turret
 
     public override void GetUpgradeText(NodeUI uI)
     {
+        // Get the upgrade text based on the turret's level
         switch (level)
         {
             case 1:
@@ -117,6 +125,7 @@ public class Basic : Turret
 
     public override void GetTierUpgradeDetails(InventoryTurretButton button)
     {
+        // Get the tier upgrade text and cost based on the turret's level
         if (tier == 1)
         {
             button.display.tierUpgradeDetailsText.text = "Damage +1";
@@ -149,27 +158,29 @@ public class Basic : Turret
         }
     }
 
-    public override void UpgradeTier(int nextTier)
+    public override void GetTierBonuses()
     {
-        if (nextTier == 2)
+        // Give the turret bonuses based on it's tier
+        if (tier == 2)
         {
-            tier++;
             damage++;
         }
-        else if (nextTier == 3)
+        else if (tier == 3)
         {
-            tier++;
+            damage++;
             attackRange++;
         }
-        else if (nextTier == 4)
+        else if (tier == 4)
         {
-            tier++;
+            damage++;
+            attackRange++;
             shotsPerSecond += 0.25f;
         }
-        else if (nextTier == 5)
+        else if (tier == 5)
         {
-            tier++;
-            damage += 5;
+            attackRange++;
+            shotsPerSecond += 0.25f;
+            damage += 6;
         }
     }
 }

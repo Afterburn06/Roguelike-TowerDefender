@@ -76,17 +76,22 @@ public class NodeUI : MonoBehaviour
             upgradeButton.interactable = true;
         }
 
+        // Set the level text
         levelText.text = "Level " + t.level;
 
+        // Set the turret image
         turretImage.sprite = t.turretSprite;
 
+        // Get the upgrade text from the turret
         t.GetUpgradeText(this);
 
         // Set the cost text to the cost variable
         upgradeCost.text = "Upgrade: $" + cost;
 
+        // Get the sell value of the turret
         GetSellValue();
 
+        // Set the sell text
         sellAmount.text = "Sell: $" + sellValue;
     }
 
@@ -109,10 +114,9 @@ public class NodeUI : MonoBehaviour
 
     public void GetUpgradeCost()
     {
-        // Depending on the turret's level
         switch (turret.level)
         {
-            // Get the upgrade cost, set the cost variable to that amount
+            // Get the upgrade cost based on the turret's level, set the cost variable to that amount
             case 1:
                 cost = turret.levelTwoCost;
                 break;
@@ -130,9 +134,12 @@ public class NodeUI : MonoBehaviour
 
     public void Sell()
     {
+        // Give the player money
         MoneyManager.currentMoney += sellValue;
 
+        // Destroy the turret
         Destroy(target.turret);
+        // Hide the UI
         HideUI();
     }
 
@@ -140,7 +147,7 @@ public class NodeUI : MonoBehaviour
     {
         switch (turret.level)
         {
-            // Get the upgrade cost, set the cost variable to that amount
+            // Get the sell cost based on the turret's level, set the sellValue variable to that amount
             case 1:
                 sellValue = turret.baseCost / 2;
                 break;

@@ -22,7 +22,13 @@ public class Farm : Turret
         // New functionality
         enemySpawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
 
+        // Reset last wave counter
         lastWave = 1;
+
+        // Get the turret's tier
+        tier = PlayerStats.farmTier;
+        // Get the bonuses from that tier
+        GetTierBonuses();
     }
 
     protected override void Update()
@@ -32,6 +38,7 @@ public class Farm : Turret
         // New functionality
         switch (level)
         {
+            // Get the amount of money produced based on the turret's level
             case 1:
                 moneyProduced = levelOneMoneyProduced;
                 break;
@@ -49,22 +56,21 @@ public class Farm : Turret
                 break;
         }
 
+        // If the last wave number is less than the current wave
         if (lastWave < enemySpawner.waveCount)
         {
+            // Add money
             MoneyManager.currentMoney += moneyProduced;
+            // Change the last wave counter
             lastWave = enemySpawner.waveCount;
         }
-    }
-
-    protected override void OnDrawGizmosSelected()
-    {
-        // Remove Turret script OnDrawGizmosSelected() functionality
     }
 
     public override void GetUpgradeText(NodeUI uI)
     {
         switch (level)
         {
+            // Get the upgrade text based on the turret's level
             case 1:
                 uI.damageText.text = "Production: $100 → $200";
                 uI.rangeText.text = "";
@@ -98,6 +104,7 @@ public class Farm : Turret
 
     public override void GetTierUpgradeDetails(InventoryTurretButton button)
     {
+        // Get the tier upgrade text and cost based on the turret's level
         if (tier == 1)
         {
             button.display.tierUpgradeDetailsText.text = "Production +$25";
@@ -130,27 +137,29 @@ public class Farm : Turret
         }
     }
 
-    public override void UpgradeTier(int nextTier)
+    public override void GetTierBonuses()
     {
-        if (nextTier == 2)
+        // Give the turret bonuses based on it's tier
+        if (tier == 2)
         {
-            tier++;
             moneyProduced += 25;
         }
-        else if (nextTier == 3)
+        else if (tier == 3)
         {
-            tier++;
-            moneyProduced += 25;
-        }
-        else if (nextTier == 4)
-        {
-            tier++;
             moneyProduced += 50;
         }
-        else if (nextTier == 5)
+        else if (tier == 4)
         {
-            tier++;
             moneyProduced += 100;
         }
+        else if (tier == 5)
+        {
+            moneyProduced += 200;
+        }
+    }
+
+    protected override void OnDrawGizmosSelected()
+    {
+        // Remove Turret script OnDrawGizmosSelected() functionality
     }
 }

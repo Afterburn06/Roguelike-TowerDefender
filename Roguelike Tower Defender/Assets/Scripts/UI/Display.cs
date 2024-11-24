@@ -36,8 +36,10 @@ public class Display : MonoBehaviour
 
     void Update()
     {
+        // If a unit is not selected
         if (currentUnit == null)
         {
+            // Disable buttons
             upgradeButton.interactable = false;
             slotOneButton.interactable = false;
             slotTwoButton.interactable = false;
@@ -47,6 +49,7 @@ public class Display : MonoBehaviour
         }
         else
         {
+            // Enable buttons
             slotOneButton.interactable = true;
             slotTwoButton.interactable = true;
             slotThreeButton.interactable = true;
@@ -61,7 +64,9 @@ public class Display : MonoBehaviour
         // Set Button One's turret to the one assigned to this button
         buttonOne.myTurret = currentUnit;
 
+        // Get the number assigned to the turret type
         GetTurretNum(buttonOne);
+        // Set the PlayerStats variable to that number
         PlayerStats.equippedTurretOne = turretNum;
         
         // Remove this turret from the 
@@ -115,13 +120,39 @@ public class Display : MonoBehaviour
 
     public void Upgrade()
     {
+        // Get the script of the turret to be upgraded
         Turret script = currentUnit.GetComponent<Turret>();
 
-        script.UpgradeTier(script.tier + 1);
+        // Upgrade the turret's tier
+        script.tier += 1;
 
+        // Increase the PlayerStats tier for the turret that was upgraded
+        if (currentUnit.name == "Basic Turret")
+        {
+            PlayerStats.basicTier++;
+        }
+        else if (currentUnit.name == "Sniper Turret")
+        {
+            PlayerStats.sniperTier++;
+        }
+        else if (currentUnit.name == "Slugger Turret")
+        {
+            PlayerStats.sluggerTier++;
+        }
+        else if (currentUnit.name == "Spitter Turret")
+        {
+            PlayerStats.spitterTier++;
+        }
+        else if (currentUnit.name == "Farm")
+        {
+            PlayerStats.farmTier++;
+        }
+
+        // Take away currency
         PlayerStats.materialOneAmount -= Convert.ToInt32(materialOneText.text);
         PlayerStats.materialTwoAmount -= Convert.ToInt32(materialTwoText.text);
 
+        // Change text elements
         tierText.text = "Tier: " + script.tier;
         tierUpgradeText.text = "Tier " + script.tier + " → " + (script.tier + 1);
 
@@ -131,6 +162,7 @@ public class Display : MonoBehaviour
 
     void GetTurretNum(EquippedTurretButton button)
     {
+        // Set turretNum based on the kind of turret
         if (button.myTurret.name == "Basic Turret")
         {
             turretNum = 1;

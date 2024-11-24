@@ -30,8 +30,8 @@ public class Countdown : MonoBehaviour
 
     void Update()
     {
-        // Don't do anything if the map is not loaded or the game is over
-        if (!MapGenerator.loaded || GameManager.gameOver)
+        // Don't do anything if the game is over
+        if (GameManager.gameOver)
         {
             return;
         }

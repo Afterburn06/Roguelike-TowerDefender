@@ -42,21 +42,18 @@ public class BuildManager : MonoBehaviour
         // If the player does not have enough money to build the turret
         if (MoneyManager.currentMoney < turretToBuild.baseCost)
         {
-            Debug.Log("Not enough money!");
             return;
         }
 
         // If the player already has the max number of units
         if (TurretManager.currentUnits == TurretManager.maxUnits)
         {
-            Debug.Log("Unit allowance reached.");
             return;
         }
 
-        //
+        // If the player tries to build on the wrong kind of tile
         if (node.gameObject.layer != turretToBuild.allowedLayer)
         {
-            Debug.Log("Cannot place that turret here.");
             return;
         }
 

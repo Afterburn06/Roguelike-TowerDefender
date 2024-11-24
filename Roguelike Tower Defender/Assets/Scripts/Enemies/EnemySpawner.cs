@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Misc")]
     private Countdown countdown;
     public GameObject hiddenWarningUI;
+    public Vector3 spawnPoint;
 
     void Awake()
     {
@@ -37,9 +38,11 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        // Disable UI elements
         necromancerUI.SetActive(false);
         hiddenWarningUI.SetActive(false);
 
+        // Reset the wave counter
         waveCount = 0;
         // Get the Countdown script in this scene
         countdown = GameObject.Find("Enemy Spawner").GetComponent<Countdown>();
@@ -48,20 +51,24 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         // If the map is not loaded or the setup time is not over or the game is over
-        if (!MapGenerator.loaded || !Countdown.setupComplete || GameManager.gameOver)
+        if (!Countdown.setupComplete || GameManager.gameOver)
         {
             // Do not execute any more code
             return;
         }
 
+        // Set the wave counter text
         waveText.text = "Wave: " + waveCount.ToString() + "/" + waves.Length;
 
+        // If the wave counter is at 7
         if (waveCount == 7)
         {
+            // Enable the UI warning of hidden enemies
             hiddenWarningUI.SetActive(true);
         }
         else
         {
+            // Disable the UI warning of hidden enemies
             hiddenWarningUI.SetActive(false);
         }
 
@@ -128,12 +135,16 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemyToSpawn)
     {
         // Instantiate the enemy at the spawn point
-        Instantiate(enemyToSpawn, MapGenerator.spawnPoint, Quaternion.identity);
+        Instantiate(enemyToSpawn, spawnPoint, Quaternion.identity);
 
+        // If the Necromancer is spawned
         if (enemyToSpawn.name == "Necromancer")
         {
+            // Enable the UI
             necromancerUI.SetActive(true);
+            // Get the Necromancer script
             Necromancer necro = enemyToSpawn.GetComponent<Necromancer>();
+            // Call the script's SetHealthUI method
             necro.SetHealthUI(necromancerUI, necromancerImage, necromancerText);
         }
 

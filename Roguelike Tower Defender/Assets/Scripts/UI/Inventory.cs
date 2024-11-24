@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
     public static GameObject turretFour;
     public static GameObject turretFive;
 
+    [Header("Turret Prefabs")]
     public GameObject basicTurret;
     public GameObject sniperTurret;
     public GameObject sluggerTurret;
@@ -32,36 +33,49 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        // If the PlayerStats slot one turret numer is 0
         if (PlayerStats.equippedTurretOne == 0)
         {
+            // Remove the turret from button one
             buttonOne.myTurret = null;
         }
+        // If the PlayerStats slot one turret numer is 1
         else if (PlayerStats.equippedTurretOne == 1)
         {
+            // Set the turret in the buttons to the basic turret
             turretOne = basicTurret;
             buttonOne.myTurret = basicTurret;
         }
+        // If the PlayerStats slot one turret numer is 2
         else if (PlayerStats.equippedTurretOne == 2)
         {
+            // Set the turret in the buttons to the sniper turret
             turretOne = sniperTurret;
             buttonOne.myTurret = sniperTurret;
         }
+        // If the PlayerStats slot one turret numer is 3
         else if (PlayerStats.equippedTurretOne == 3)
         {
+            // Set the turret in the buttons to the slugger turret
             turretOne = sluggerTurret;
             buttonOne.myTurret = sluggerTurret;
         }
+        // If the PlayerStats slot one turret numer is 4
         else if (PlayerStats.equippedTurretOne == 4)
         {
+            // Set the turret in the buttons to the spitter turret
             turretOne = spitterTurret;
             buttonOne.myTurret = spitterTurret;
         }
+        // If the PlayerStats slot one turret numer is 5
         else if (PlayerStats.equippedTurretOne == 5)
         {
+            // Set the turret in the buttons to the farm
             turretOne = farmTurret;
             buttonOne.myTurret = farmTurret;
         }
 
+        // Rest of the if else if statements follow the same pattern, just for different buttons
         if (PlayerStats.equippedTurretTwo == 0)
         {
             buttonTwo.myTurret = null;
@@ -185,6 +199,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+        // Change the text elements
         materialOneText.text = PlayerStats.materialOneAmount.ToString();
         materialTwoText.text = PlayerStats.materialTwoAmount.ToString();
     }

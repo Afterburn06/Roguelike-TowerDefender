@@ -34,13 +34,6 @@ public class CameraController : MonoBehaviour
             this.enabled = false;
             return;
         }
-        
-        // If the map isn't loaded
-        if (!MapGenerator.loaded)
-        {
-            // Don't run further code in the Update method
-            return;
-        }
 
         // If the W key is pressed
         if (Input.GetKey("w") && transform.position.z != minZ)

@@ -49,7 +49,7 @@ public class GameShop : MonoBehaviour
             buttonOneNameText.text = Inventory.turretOne.name;
             // Get the Turret script of the turret assigned to this button, store in in a variable
             turretOne = Inventory.turretOne.GetComponent<Turret>();
-
+            // Set the cost text to the cost of the turret
             buttonOneCostText.text = "$" + turretOne.baseCost;
         }
 

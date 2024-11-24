@@ -14,7 +14,10 @@ public class Spitter : Turret
     {
         base.Start();
 
+        // Get the turret's tier
         tier = PlayerStats.spitterTier;
+        // Get the bonuses from that tier
+        GetTierBonuses();
     }
 
     protected override void Update()
@@ -62,6 +65,7 @@ public class Spitter : Turret
     {
         switch (level)
         {
+            // Upgrade the turret based on the level it's at currently
             case 1:
                 damage++;
                 break;
@@ -85,6 +89,7 @@ public class Spitter : Turret
 
     public override void GetUpgradeText(NodeUI uI)
     {
+        // Get the upgrade text based on the turret's level
         switch (level)
         {
             case 1:
@@ -120,6 +125,7 @@ public class Spitter : Turret
 
     public override void GetTierUpgradeDetails(InventoryTurretButton button)
     {
+        // Get the tier upgrade text and cost based on the turret's level
         if (tier == 1)
         {
             button.display.tierUpgradeDetailsText.text = "Damage +1";
@@ -152,27 +158,29 @@ public class Spitter : Turret
         }
     }
 
-    public override void UpgradeTier(int nextTier)
+    public override void GetTierBonuses()
     {
-        if (nextTier == 2)
+        // Give the turret bonuses based on it's tier
+        if (tier == 2)
         {
-            tier++;
             damage++;
         }
-        else if (nextTier == 3)
+        else if (tier == 3)
         {
-            tier++;
+            damage++;
             attackRange += 2;
         }
-        else if (nextTier == 4)
+        else if (tier == 4)
         {
-            tier++;
+            damage++;
+            attackRange += 2;
             shotsPerSecond += 0.75f;
         }
-        else if (nextTier == 5)
+        else if (tier == 5)
         {
-            tier++;
-            damage += 3;
+            attackRange += 2;
+            shotsPerSecond += 0.75f;
+            damage += 4;
         }
     }
 }

@@ -14,7 +14,10 @@ public class Sniper : Turret
     {
         base.Start();
 
+        // Get the turret's tier
         tier = PlayerStats.sniperTier;
+        // Get the bonuses from that tier
+        GetTierBonuses();
     }
 
     protected override void Update()
@@ -62,6 +65,7 @@ public class Sniper : Turret
     {
         switch (level)
         {
+            // Upgrade the turret based on the level it's at currently
             case 1:
                 attackRange += 1;
                 damage += 2;
@@ -86,6 +90,7 @@ public class Sniper : Turret
 
     public override void GetUpgradeText(NodeUI uI)
     {
+        // Get the upgrade text based on the turret's level
         switch (level)
         {
             case 1:
@@ -121,6 +126,7 @@ public class Sniper : Turret
 
     public override void GetTierUpgradeDetails(InventoryTurretButton button)
     {
+        // Get the tier upgrade text and cost based on the turret's level
         if (tier == 1)
         {
             button.display.tierUpgradeDetailsText.text = "Damage +3";
@@ -153,27 +159,27 @@ public class Sniper : Turret
         }
     }
 
-    public override void UpgradeTier(int nextTier)
+    public override void GetTierBonuses()
     {
-        if (nextTier == 2)
+        // Give the turret bonuses based on it's tier
+        if (tier == 2)
         {
-            tier++;
             damage += 3;
         }
-        else if (nextTier == 3)
+        else if (tier == 3)
         {
-            tier++;
+            damage += 3;
             attackRange += 5;
         }
-        else if (nextTier == 4)
+        else if (tier == 4)
         {
-            tier++;
-            damage += 5;
+            attackRange += 5;
+            damage += 8;
         }
-        else if (nextTier == 5)
+        else if (tier == 5)
         {
-            tier++;
-            attackRange += 10;
+            damage += 8;
+            attackRange += 15;
         }
     }
 }
